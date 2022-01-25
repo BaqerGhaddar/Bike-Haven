@@ -1,4 +1,4 @@
-const { Model, DataTypes, DATE } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Bicycle_Comment extends Model {}
@@ -18,6 +18,14 @@ Bicycle_Comment.init({
         allowNull: false,
         references: {
             model: 'bicycle',
+            key: 'id'
+        }
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'user',
             key: 'id'
         }
     }

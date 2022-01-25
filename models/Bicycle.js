@@ -19,10 +19,7 @@ Bicycle.init({
     },
     stock: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
-            isNumeric: true
-        }
+        allowNull: false
     },
     price: {
         type: DataTypes.DECIMAL(6, 2),
