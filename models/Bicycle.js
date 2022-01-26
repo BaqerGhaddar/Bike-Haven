@@ -13,6 +13,10 @@ Bicycle.init({
         type: DataTypes.STRING,
         allowNull: false
     },
+    model: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     description: {
         type: DataTypes.TEXT,
         allowNull: false
