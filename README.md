@@ -12,10 +12,16 @@ SO THAT users can view bikes/parts, leave reviews, add items to shopping carts a
 ```
 GIVEN a online store/blog
 WHEN I visit the Bike Haven online store 
-THEN I am presented with a clean website that contains images for the user to see and a header with the options for 'wishlist, 'bikes', 'parts'
+THEN I am presented with a clean website that contains images for the user to see and a header with the options for 'wishlist, 'bikes', 'Customize'
 WHEN I click on the 'wishlist' section in the header
 THEN I am presented with a list of my liked items If I am logged in and have items that i've liked, otherwise I am prompted to login first
 WHEN I click on the 'bikes' section 
 THEN I am presented with several prebuilt bikes with bike brands that the store sells
-WHEN I click on the 'parts' section I can view the different bike parts  
+WHEN I click on the 'Customize' section  
+THEN I am teken through step by step process to select bike parts to build a custom bike
+WHEN I click on a specific pre-built bike
+THEN I can view more details & reviews
+WHEN I click on a Heart Icon
+THEN the item get added to my wishlist
 ```
+
