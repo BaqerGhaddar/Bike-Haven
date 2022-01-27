@@ -16,7 +16,7 @@ User.init(
       allowNull: false,
       unique: true,
       validate: {
-        len: [4]
+        len: [8]
       }
     },
     email: {
