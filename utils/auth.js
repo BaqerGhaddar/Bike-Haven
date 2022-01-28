@@ -1,9 +1,9 @@
-const auth = (req, res, next) => {
-  if (!req.session.user_id) {
-    res.redirect('/login');
-  } else {
-    next();
-  }
+const withAuth = (req, res, next) => {
+  if (req.path == '/' || req.path == '/login') return next();
+
+  !req.session.loggedIn
+    ? res.redirect('/login') //true condition
+    : next(); //false condition
 };
 
-module.exports = auth;
+module.exports = withAuth;

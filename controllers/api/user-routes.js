@@ -19,4 +19,8 @@ router.post('/', (req, res) => {
         });
 });
 
+router.get('/login', (req, res) => {
+    
+});
+
 module.exports = router;
