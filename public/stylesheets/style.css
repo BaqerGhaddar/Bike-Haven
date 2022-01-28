@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* general body set */
+
+body{
+    background-color: rgb(190, 187, 187)!important;
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+
+/* Navbar Section */
+
+.navbar{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(229,244,224,1) 0%, rgba(108,217,38,1) 24%, rgba(34,162,154,1) 65%, rgba(8,92,206,1) 100%, rgba(0,212,255,1) 100%);
+}
+.nav{
+font-weight: bold;
+}
+
+.navbar{
+    padding:30px 0 30px 30px;
+}
+.navbar-brand {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar-toggler:hover {
+    text-decoration: none;
+    color: rgb(197, 228, 86);
+}
+
+/* Footer Section */
+
+footer{
+    display:block;
+    justify-content: flex-end;
+    padding-top: 20px;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    background-color: white!important;
+    font-weight: bold;
+}
+
+/* Icons contact Section */
+.icon{
+    padding-right: 50px;
+    color: rgb(197, 228, 86);
+}
+
+.icon:hover{
+   color: rgb(106, 181, 216);
+}
+
+
+footer a{
+    justify-content: space-evenly;
+}
+
+footer .icons{
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+
+
+
+
+
