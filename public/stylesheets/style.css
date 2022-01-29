@@ -7,10 +7,12 @@
 /* general body set */
 
 body{
-    background-color: rgb(190, 187, 187)!important;
     font-family: 'Montserrat', sans-serif!important;
+    background-image: url("../../public/images/bike-race.jpg");
+    background-size: cover;        background-position:center;
+    background-attachment: fixed;
+    background-position: 80%;
 }
-
 
 /* Navbar Section */
 
