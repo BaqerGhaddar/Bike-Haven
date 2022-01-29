@@ -1,4 +1,4 @@
-const { Bicycle } = require('../models');
+const { Bicycle, Wishlist } = require('../models');
 
 const bikeData = [
   {

@@ -1,8 +1,8 @@
-<h1>Reviews</h1>
+{{!-- <h1>Reviews</h1>
 <ul class="reviews">
     {{with as |post|}}
     <li>
-        ${new Date().getFullYear()}
+        {{ post created_at}}
 
         <div class="meta">
             {{part_comment.user}} {{bicycle_comment.user.username}} on
@@ -13,5 +13,4 @@
     </li>
     {{/with}}
 </ul>
-
-<script src="moment.js"></script>
+ --}}

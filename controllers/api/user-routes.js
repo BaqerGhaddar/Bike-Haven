@@ -1,12 +1,5 @@
 const router = require('express').Router();
-const {
-  User,
-  Bicycle,
-  Bicycle_Comment,
-  Part,
-  Part_Comment,
-  Wishlist
-} = require('../../models');
+const { User, Bicycle, Part, Wishlist } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -28,7 +21,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Wishlist,
-        attributes: ['bike_id', 'user_id', 'part_id']
+        attributes: ['user_id', 'bike_id', 'part_id']
       }
     ]
   })
