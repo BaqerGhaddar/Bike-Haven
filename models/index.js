@@ -46,7 +46,8 @@ User.hasOne(Wishlist, {
 });
 
 Wishlist.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
 module.exports = {

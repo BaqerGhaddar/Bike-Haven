@@ -39,13 +39,6 @@ User.init(
         len: [8]
       }
     }
-    // wishlist_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'wishlist',
-    //     key: 'id'
-    //   }
-    // }
   },
   {
     hooks: {
