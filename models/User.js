@@ -38,22 +38,24 @@ User.init(
       validate: {
         len: [8]
       }
-    },
-    wishlist_id: {
-      types: DataTypes.INTEGER,
-      references: {
-        model: 'wishlist',
-        key: 'id'
-      }
     }
+    // wishlist_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'wishlist',
+    //     key: 'id'
+    //   }
+    // }
   },
   {
     hooks: {
       async beforeBulkCreate(newUserDataList) {
-        const dataList = await Promise.all(newUserDataList.map( async (newUserData) => {
-          newUserData.password = await bcrypt.hash(newUserData.password, 10);
-          return newUserData;
-        }));
+        const dataList = await Promise.all(
+          newUserDataList.map(async (newUserData) => {
+            newUserData.password = await bcrypt.hash(newUserData.password, 10);
+            return newUserData;
+          })
+        );
         return dataList;
       },
       // set up beforeCreate lifecycle "hook" functionality
@@ -64,9 +66,12 @@ User.init(
       },
       // set up beforeUpdate lifecycle "hook" functionality
       async beforeUpdate(updatedUserData) {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
         return updatedUserData;
-      },
+      }
     },
     sequelize,
     timestamps: false,
