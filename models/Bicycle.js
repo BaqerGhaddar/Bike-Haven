@@ -26,6 +26,10 @@ Bicycle.init(
       type: DataTypes.INTEGER,
       allowNull: false
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     price: {
       type: DataTypes.DECIMAL(6, 2),
       allowNull: false,
@@ -33,6 +37,14 @@ Bicycle.init(
         isDecimal: true
       }
     }
+    // wishlist_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: true,
+    //   references: {
+    //     model: 'wishlist',
+    //     key: 'id'
+    //   }
+    // }
   },
   {
     sequelize,
