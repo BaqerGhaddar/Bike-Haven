@@ -5,12 +5,12 @@ class Wishlist extends Model {}
 
 Wishlist.init(
   {
-    // id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   primaryKey: true,
-    //   autoIncrement: true
-    // },
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
     bike_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
