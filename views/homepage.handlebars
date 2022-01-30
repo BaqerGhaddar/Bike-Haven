@@ -2,7 +2,7 @@
 <ul class="reviews">
     {{with as |post|}}
     <li>
-        ${new Date().getFullYear()}
+        {{ post created_at}}
 
         <div class="meta">
             {{part_comment.user}} {{bicycle_comment.user.username}} on
@@ -14,4 +14,12 @@
     {{/with}}
 </ul>
 
-<script src="moment.js"></script>
+<div>
+    {{#each posts as |post|}}
+
+        {{>post-info post}}
+</div>
+
+{{else}}
+    <p class="pb-4">There are not currently posts</p>
+    {{/each}}

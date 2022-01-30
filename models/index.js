@@ -29,16 +29,28 @@ Part.hasMany(Part_Comment, {
   foreignKey: 'part_id'
 });
 
-Bicycle.belongsToMany(User, {
+Bicycle.belongsTo(User, {
   through: Wishlist,
-  as: 'liked_item',
+  as: 'liked_bike',
   foreignKey: 'bike_id'
 });
 
-Part.belongsToMany(User, {
+User.belongsToMany(Bicycle, {
   through: Wishlist,
   as: 'liked_item',
+  foreignKey: 'user_id'
+});
+
+Part.belongsTo(User, {
+  through: Wishlist,
+  as: 'liked_part',
   foreignKey: 'part_id'
+});
+
+User.belongsToMany(Part, {
+  through: Wishlist,
+  as: 'liked_part',
+  foreignKey: 'user_id'
 });
 
 User.hasOne(Wishlist, {
