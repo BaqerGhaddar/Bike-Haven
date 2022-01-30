@@ -79,14 +79,18 @@
                 aria-current='true'
                 aria-expanded='false'
               >
-                Sign in
+                Profile
               </a>
               <ul
                 class='dropdown-menu'
                 aria-labelledby='navbarDropdownMenuLink'
               >
-                <li><a class='dropdown-item' href='#'>Login</a></li>
-                <li><a class='dropdown-item' href='#'>Logout</a></li>
+                {{#if loggedIn}}
+                  <li><a class='dropdown-item' href='/logout'>Logout</a></li>
+                {{else}}
+                  <li><a class='dropdown-item' href='/login'>Login</a></li>
+                {{/if}}
+
               </ul>
             </li>
           </ul>
@@ -114,6 +118,7 @@
       </div>
       <p>©Copyright 2022, Made by Awesome Coders</p>
     </footer>
+    
   </body>
 
 </html>
