@@ -20,8 +20,12 @@ router.get('/:id', (req, res) => {
     },
     include: [
       {
-        model: Wishlist,
-        attributes: ['user_id', 'bike_id', 'part_id']
+        model: Part,
+        through: Wishlist
+      },
+      {
+        model: Bicycle,
+        through: Wishlist
       }
     ]
   })

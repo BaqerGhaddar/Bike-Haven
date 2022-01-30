@@ -29,37 +29,24 @@ Part.hasMany(Part_Comment, {
   foreignKey: 'part_id'
 });
 
-Bicycle.belongsTo(User, {
-  through: Wishlist,
-  as: 'liked_bike',
-  foreignKey: 'bike_id'
-});
-
 User.belongsToMany(Bicycle, {
   through: Wishlist,
-  as: 'liked_item',
   foreignKey: 'user_id'
 });
 
-Part.belongsTo(User, {
+Bicycle.belongsToMany(User, {
   through: Wishlist,
-  as: 'liked_part',
-  foreignKey: 'part_id'
+  foreignKey: 'bike_id'
 });
 
 User.belongsToMany(Part, {
   through: Wishlist,
-  as: 'liked_part',
   foreignKey: 'user_id'
 });
 
-User.hasOne(Wishlist, {
-  foreignKey: 'user_id'
-});
-
-Wishlist.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
+Part.belongsToMany(User, {
+  through: Wishlist,
+  foreignKey: 'part_id'
 });
 
 module.exports = {
