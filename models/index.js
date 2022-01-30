@@ -5,49 +5,31 @@ const Part = require('./Part');
 const Part_Comment = require('./Part-Comment');
 const Wishlist = require('./Wishlist');
 
-User.hasMany(Part_Comment, {
-  foreignKey: 'user_id'
-});
+// Comments
+User.hasMany(Part_Comment, { foreignKey: 'user_id' });
 
-Part_Comment.belongsTo(User, {
-  foreignKey: 'user_id'
-});
+Part_Comment.belongsTo(User, { foreignKey: 'user_id' });
 
-User.hasMany(Bicycle_Comment, {
-  foreignKey: 'user_id'
-});
+User.hasMany(Bicycle_Comment, { foreignKey: 'user_id' });
 
-Bicycle_Comment.belongsTo(User, {
-  foreignKey: 'user_id'
-});
+Bicycle_Comment.belongsTo(User, { foreignKey: 'user_id' });
 
-Bicycle.hasMany(Bicycle_Comment, {
-  foreignKey: 'bike_id'
-});
+Bicycle.hasMany(Bicycle_Comment, { foreignKey: 'bike_id' });
 
-Part.hasMany(Part_Comment, {
-  foreignKey: 'part_id'
-});
+Part.hasMany(Part_Comment, { foreignKey: 'part_id' });
 
-User.belongsToMany(Bicycle, {
-  through: Wishlist,
-  foreignKey: 'user_id'
-});
+// Wishlist
+User.hasOne(Wishlist, { foreignKey: 'user_id' });
 
-Bicycle.belongsToMany(User, {
-  through: Wishlist,
-  foreignKey: 'bike_id'
-});
+Wishlist.belongsTo(User, { foreignKey: 'user_id' });
 
-User.belongsToMany(Part, {
-  through: Wishlist,
-  foreignKey: 'user_id'
-});
+Wishlist.belongsTo(Bicycle, { foreignKey: 'bike_id' });
 
-Part.belongsToMany(User, {
-  through: Wishlist,
-  foreignKey: 'part_id'
-});
+Bicycle.hasMany(Wishlist, { foreignKey: 'bike_id' });
+
+Wishlist.belongsTo(Part, { foreignKey: 'part_id' });
+
+Part.hasMany(Wishlist, { foreignKey: 'part_id' });
 
 module.exports = {
   User,

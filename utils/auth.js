@@ -1,5 +1,6 @@
 const withAuth = (req, res, next) => {
-  if (req.path == '/' || req.path == '/login') return next();
+  console.log('using middleware and path: ', req.path);
+  if (req.path == '/' || req.path.startsWith('/login')) return next();
 
   !req.session.loggedIn
     ? res.redirect('/login') //true condition
