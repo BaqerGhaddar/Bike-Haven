@@ -8,7 +8,15 @@ router.use(withAuth);
 
 router.get('/', async (req, res) => {
   try {
+    const dbBikeData = await Bicycle.findAll({
+      order: [['stock', 'DESC']],
+      limit: 3,
+      raw: true,
+      nest: true
+    });
+    featured_bikes = resizeArray(dbBikeData)
     res.render('homepage', {
+      featured_bikes,
       page: 'homepage',
       loggedIn: req.session.loggedIn
     });
@@ -42,7 +50,7 @@ router.get('/bikes', async (req, res) => {
     if (!dbBikeData) return;
     const bikeData = resizeArray(dbBikeData, 3);
     console.log(bikeData);
-    res.render('bikes', { bikeData, loggedIn: req.session.loggedIn });
+    res.render('bike-products', { bikeData, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
