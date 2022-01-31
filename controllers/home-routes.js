@@ -14,8 +14,18 @@ router.get('/', async (req, res) => {
       raw: true,
       nest: true
     });
-    featured_bikes = resizeArray(dbBikeData)
+    featured_bikes = resizeArray(dbBikeData);
+
+    const current_user = req.session.loggedIn
+      ? await User.findOne({
+          where: { id: req.session.user_id },
+          raw: true,
+          nest: true
+        })
+      : {};
+
     res.render('homepage', {
+      current_user,
       featured_bikes,
       page: 'homepage',
       loggedIn: req.session.loggedIn
