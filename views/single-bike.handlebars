@@ -1,5 +1,5 @@
 <section>
-    {{>post-info post}}
+    {{>bike-info bike}}
 
     {{#if loggedIn}}
         <form class="comment-form">
@@ -12,7 +12,7 @@
         </form>
     {{/if}}
 
-    {{>comment bicycle_comment.comments}}
+    {{!-- {{>comment bicycle_comment.comments}} --}}
     {{#if loggedIn}}
         <script src="/javascript/comments.js"></script>
     {{/if}}

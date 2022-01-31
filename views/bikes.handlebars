@@ -1,0 +1,15 @@
+<article class='bike-section'>
+  <div id='container'>
+    {{#each bikeData as |bike_row|}}
+      <div class='row'>
+        {{#each bike_row as |bike|}}
+          <div class='col'>
+            <a href='/bikes/{{bike.id}}'>
+              {{>bike-info bike}}
+            </a>
+          </div>
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+</article>
