@@ -74,6 +74,46 @@ footer .icons{
     padding-top: 30px;
 }
 
+@media screen and (max-width:980px){
+    .navbar-brand{
+        font-size: 30px;
+    }
+    
+}
+
+@media screen and (max-width:768px){
+    .navbar-brand{
+        font-size: 30px;
+    }
+    .navbar{
+        padding-top:20px;
+        padding-bottom: 20px;
+    }
+    
+}
+@media screen and (max-width:575px){
+    .navbar-brand{
+        font-size: 20px;
+    }
+    .container-fluid{
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .navbar-collapse{
+        font-size: 14px;
+    }
+    .text-center{
+        font-size: small;
+        font-size: 12px;
+    }
+    .icon{
+        padding-right: 20px;
+    }
+  
+    
+}
+
+
 
 
 
