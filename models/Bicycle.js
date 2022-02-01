@@ -37,14 +37,6 @@ Bicycle.init(
         isDecimal: true
       }
     }
-    // wishlist_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: true,
-    //   references: {
-    //     model: 'wishlist',
-    //     key: 'id'
-    //   }
-    // }
   },
   {
     sequelize,

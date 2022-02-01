@@ -1,0 +1,29 @@
+<article>
+    <a href="/dashboard" class=""> &larr; back to dashboard</a>
+    <h2 class="title mt-5">edit post</h2>
+    <hr>
+    <form class="edit-post-form">
+        <div>
+            <label for="post-title">post title:</label>
+            <input class="input" name="post-title" type="text" value="{{bicycle_comment.title}}" />
+        </div>
+        <div>
+            <label for="post-content">post content:</label>
+            <input class="textarea" name="post-content" type="text" value="{{bicycle.bicycle_text}}" />
+        </div>
+        <div class="is-pulled-right">
+            created by you on {{format_date post.created_at}}
+            |
+            <a href="/post/{{bicycle.id}}">{{bicycle.comments.length}}
+                {{format_plural "comment" bicycle.comments.length}}</a>
+        </div>
+        <button type="submit" class="tn btn-lg btn-outline-dark">save post</button>
+        <button type="button" class="btn btn-lg btn-outline-dark delete-post-btn">delete post</button>
+    </form>
+</article>
+
+{{> comments bicycle.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>

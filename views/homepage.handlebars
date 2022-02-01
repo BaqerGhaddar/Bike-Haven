@@ -1,17 +1,27 @@
-<h1>Reviews</h1>
-<ul class="reviews">
-    {{with as |post|}}
-    <li>
-        ${new Date().getFullYear()}
+<section class='featured-section'>
+  <div class='header-wrapper'>
+    <h2 class='featured-header'>Featured bikes</h2>
+  </div>
+    {{>bikes featured_bikes}}
+</section>
+<section class='review-section'>
+  <h1>Reviews</h1>
+  <ul class='reviews'>
+    {{#with post as |post|}}
+      <li>
+        {{post created_at}}
 
-        <div class="meta">
-            {{part_comment.user}} {{bicycle_comment.user.username}} on
-            {{part_comment.created_at}} by {{user_name}}
-            |
-            <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+        <div class='meta'>
+          {{part_comment.user}}
+          {{bicycle_comment.user.username}}
+          on
+          {{part_comment.created_at}}
+          by
+          {{user_name}}
+          |
+          <a href='/post/{{post.id}}'>{{post.comments.length}} comment(s)</a>
         </div>
-    </li>
+      </li>
     {{/with}}
-</ul>
-
-<script src="moment.js"></script>
+  </ul>
+</section>

@@ -7,10 +7,12 @@
 /* general body set */
 
 body{
-    background-color: rgb(190, 187, 187)!important;
     font-family: 'Montserrat', sans-serif!important;
+    background-image: url("../../public/images/bike-race.jpg");
+    background-size: cover;        background-position:center;
+    background-attachment: fixed;
+    background-position: 80%;
 }
-
 
 /* Navbar Section */
 
@@ -71,6 +73,46 @@ footer .icons{
     padding-bottom: 30px;
     padding-top: 30px;
 }
+
+@media screen and (max-width:980px){
+    .navbar-brand{
+        font-size: 30px;
+    }
+    
+}
+
+@media screen and (max-width:768px){
+    .navbar-brand{
+        font-size: 30px;
+    }
+    .navbar{
+        padding-top:20px;
+        padding-bottom: 20px;
+    }
+    
+}
+@media screen and (max-width:575px){
+    .navbar-brand{
+        font-size: 20px;
+    }
+    .container-fluid{
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .navbar-collapse{
+        font-size: 14px;
+    }
+    .text-center{
+        font-size: small;
+        font-size: 12px;
+    }
+    .icon{
+        padding-right: 20px;
+    }
+  
+    
+}
+
 
 
 
