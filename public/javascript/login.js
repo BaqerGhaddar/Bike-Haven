@@ -58,8 +58,11 @@ if (document.querySelector('.login-form')) {
 }
 
 showError = () => {
-    loginFormEl = document.querySelector('.login-button');
-    errorEl = document.createElement('p')
-    errorEl.textContent = 'Error in login! Check password or username'
-    loginFormEl.append(errorEl)
+  if (document.querySelector('#error-password'))
+    document.querySelector('#error-password').remove();
+  loginFormEl = document.querySelector('.login-button');
+  errorEl = document.createElement('p');
+  errorEl.textContent = 'Error in login! Check password or username';
+  errorEl.setAttribute('id', 'error-password');
+  loginFormEl.append(errorEl);
 };
