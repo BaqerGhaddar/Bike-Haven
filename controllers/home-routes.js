@@ -4,7 +4,7 @@ const { Bicycle, Bicycle_Comment, User } = require('../models');
 const resizeArray = require('../utils/resizeArray');
 
 // middleware auth function
-// router.use(withAuth);
+router.use(withAuth);
 
 router.get('/', async (req, res) => {
   try {

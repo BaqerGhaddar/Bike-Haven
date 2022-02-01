@@ -4,7 +4,7 @@ const { Wishlist } = require('../../models');
 const resizeArray = require('../../utils/resizeArray');
 
 // middleware auth function
-// router.use(withAuth);
+router.use(withAuth);
 
 router.get('/', async (req, res) => {
   try {
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
   try {
     await Wishlist.create({
       bike_id: req.body.bike_id,
-      user_id: req.body.user_id
+      user_id: req.session.user_id
     });
   } catch (err) {
     console.log(err);

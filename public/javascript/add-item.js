@@ -10,7 +10,6 @@ async function addItemHandler(event) {
     method: 'POST',
     body: JSON.stringify({
       bike_id
-      // part_id
     }),
     headers: {
       'Content-Type': 'application/json'
