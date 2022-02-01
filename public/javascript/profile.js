@@ -1,5 +1,36 @@
 const myModalEl = document.querySelector('#profile-modal');
 
+function resetModal() {
+  $('.account-settings')
+    .find('div input')
+    .each(function () {
+      const inputType = $(this).data('profileinput');
+      // prettier-ignore
+      $(this).replaceWith(
+        `<span class="${$(this).attr('class')}" data-profileInput=" ${inputType}"> ${this.value}</span>`
+      );
+      const editEl = $('<button>')
+        .attr({ type: 'button', class: `btn edit-btn ${inputType}-edit` })
+        .text('Edit');
+      $(`.${$(this).attr('class')}`).after(editEl);
+    });
+}
+
+function resetPasswordEl() {
+  $('#password-div')
+    .replaceWith(`<div class='account-form-wrapper' id='password-div'>
+    <label class='password-label'>Password: </label>
+    <span
+      class='password-setting'
+      data-profileInput='password'
+    ></span>
+    <button
+      type='button'
+      class='btn edit-btn password-edit'
+    >Edit</button>
+  </div>`);
+}
+
 async function validatePasswordHandler(event) {
   event.preventDefault();
   const password = $('.old-password-input').val();
@@ -15,7 +46,7 @@ async function validatePasswordHandler(event) {
         type: 'password',
         class: `password-setting`
       });
-      $('.password-label').text('New Password')
+      $('.password-label').text('New Password');
       $('.old-password-form').after(inputEl);
       $('.old-password-form').remove();
     } else {
@@ -31,17 +62,16 @@ function editFieldHandler(event) {
 
   const spanEl = $(event.target).prev('span');
   const { profileinput } = spanEl.data();
-  
-  event.target.remove();
 
-  console.log(profileinput);
+  event.target.remove();
 
   if (profileinput == 'password') {
     const oldPasswordFormEl = $('<form>').attr({ class: 'old-password-form' });
     const oldPasswordLabelEl = $('<label>').text('Enter old password');
     const oldPasswordInputEl = $('<input>').attr({
       type: 'password',
-      class: 'old-password-input'
+      class: 'old-password-input input-field',
+      'data-profileinput': $(this).data().profileinput
     });
     const oldPasswordBtnEl = $('<button>')
       .attr({ type: 'submit' })
@@ -56,37 +86,50 @@ function editFieldHandler(event) {
     spanEl.remove();
   }
 
-  const inputEl = $('<input>').attr({
-    type: 'text',
-    value: spanEl.text(),
-    class: `${profileinput}-setting`
-  });
+  const inputEl = $('<input>')
+    .attr({
+      type: 'text',
+      value: spanEl.text(),
+      class: `${profileinput}-setting`
+    })
+    .data('profileinput', profileinput);
 
   spanEl.after(inputEl);
   spanEl.remove();
 }
 
-function saveChangesHandler(event) {
+async function saveChangesHandler(event) {
   event.preventDefault();
-  const email = $('.email-setting').is('span')
-    ? $('.email-setting').text()
-    : $('.email-setting').val();
+  resetModal();
+  const email = $('.email-setting').text().trim();
 
-  const username = $('.username-setting').is('span')
-    ? $('.username-setting').text()
-    : $('.username-setting').val();
+  const username = $('.username-setting').text().trim();
 
-  const name = $('.name-setting').is('span')
-    ? $('.name-setting').text()
-    : $('.name-setting').val();
+  const name = $('.name-setting').text().trim();
 
-  console.log('save email: ', email);
+  const password = $('.password-setting').text().trim();
+
+  const body = password ? { email, username, password } : { email, username };
+
+  console.log(body);
+  resetPasswordEl();
+  $(function () {
+    $('#profile-modal').modal('toggle');
+  });
+
+  const response = await fetch('/api/users', {
+    method: 'PUT',
+    body: JSON.stringify(body),
+    headers: { 'Content-Type': 'application/json' }
+  });
+
+  response.ok ? document.location.reload() : alert(response.statusText);
 }
 
 $(function () {
   $('#profile-modal').on('hidden.bs.modal', function () {
     console.log('hidden');
-
+    resetModal();
     $('#profile-modal form')[0].reset();
   });
 });

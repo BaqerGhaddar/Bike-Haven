@@ -106,9 +106,30 @@ router.post('/login/check', async (req, res) => {
     return;
   }
   const validPassword = dbUserData.checkPassword(req.body.password);
+  
   validPassword
     ? res.status(200).json({ message: 'success', result: true })
     : res.status(200).json({ message: 'Incorrect Password', result: false });
+});
+
+//Update User
+router.put('/', async (req, res) => {
+  /* Request body:
+    {   username: 'someuser'
+        password: 'somepassword'
+        email: 'some@email.com'
+    }  */
+  try {
+    const dbUserData = await User.update(req.body, {
+      individualHooks: true,
+      where: { id: req.session.user_id }
+    });
+    !dbUserData
+      ? res.status(404).json({ message: 'No user found with this id' })
+      : res.json(dbUserData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
