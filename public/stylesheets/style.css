@@ -96,11 +96,14 @@ font-weight: bold;
     margin: 100px auto;
 }
 
+
 input{
     margin:5px auto;
-    border-radius: 5px;
+    border-radius: 10px;
     border:rgb(78, 75, 75) 1px solid;
     display:block;
+    width:80%;
+    height: 40px;
 }
 
 .submit{
@@ -123,6 +126,8 @@ input{
     text-align: center;
     width:100%;
 }
+
+
 
 /* ICONS CONTACT SECTION */
 .icon{
@@ -206,6 +211,14 @@ footer a{
     }
     .navbar-collapse{
         font-size: 14px;
+    }
+
+    .bike-card{
+        font-size: 16px;
+    }
+
+    .heart-icon{
+        font-size: 20px;
     }
     .text-center{
         font-size: small;
