@@ -8,11 +8,46 @@
 
 body{
     font-family: 'Montserrat', sans-serif!important;
-    background-image: url("../../public/images/bike-race.jpg");
+    background-image: url("../images/bike-race.jpg");
     background-size: cover;        background-position:center;
     background-attachment: fixed;
     background-position: 80%;
+    font-weight: bold;
+    margin:0 auto 100px auto;
 }
+
+main{
+    padding:0 30px 0 30px;
+}
+
+.bike-card{
+    padding-bottom: 30px;
+}
+
+.featured-header{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: rgb(197, 228, 86);
+}
+.featured-header:hover{
+    background-color:rgb(106, 181, 216);
+}
+
+.review-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: rgb(197, 228, 86);
+    margin-bottom: 30px;
+    width:50%;
+}
+.review-title:hover{
+background-color:rgb(106, 181, 216);
+}
+
 
 /* Navbar Section */
 
@@ -41,6 +76,27 @@ font-weight: bold;
     color: rgb(197, 228, 86);
 }
 
+
+.bike-card{
+    background-color: white;
+}
+
+.heart-icon{
+    position: relative;
+    float: right;
+    padding:10px 10px 10px 10px;
+    color:gray;
+}
+
+.heart-icon:hover{
+    color: rgb(197, 228, 86);
+}
+
+.btn-block{
+    text-align: center;
+    width:100%;
+}
+
 /* Footer Section */
 
 footer{
@@ -64,15 +120,30 @@ footer{
    color: rgb(106, 181, 216);
 }
 
+.icon-laptop{
+    color: rgb(132, 124, 124);
+    padding-left: 10px;
+}
+
+.bike-card{
+    width:100%;
+}
+
+footer{
+    position: fixed;
+    padding:10px auto 10px;
+}
+    
+
 
 footer a{
     justify-content: space-evenly;
 }
 
-footer .icons{
+/* footer .icons{
     padding-bottom: 30px;
     padding-top: 30px;
-}
+} */
 
 @media screen and (max-width:980px){
     .navbar-brand{
@@ -88,6 +159,19 @@ footer .icons{
     .navbar{
         padding-top:20px;
         padding-bottom: 20px;
+    }
+
+.featured-header{
+    font-size: 20px;
+}
+
+.review-title{
+    font-size: 20px;
+}
+
+    footer{
+        padding-top: 0;
+        padding-bottom: 0;
     }
     
 }
