@@ -96,4 +96,19 @@ router.post('/login', async (req, res) => {
   });
 });
 
+router.post('/login/check', async (req, res) => {
+  if (!req.session.loggedIn) return;
+  const dbUserData = await User.findOne({
+    where: { id: req.session.user_id }
+  });
+  if (!dbUserData) {
+    res.status(400).json({ message: 'No username found!' });
+    return;
+  }
+  const validPassword = dbUserData.checkPassword(req.body.password);
+  validPassword
+    ? res.status(200).json({ message: 'success', result: true })
+    : res.status(200).json({ message: 'Incorrect Password', result: false });
+});
+
 module.exports = router;

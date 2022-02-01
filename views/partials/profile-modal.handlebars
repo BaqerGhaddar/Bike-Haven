@@ -3,7 +3,7 @@
   <div class='modal-dialog' role='document'>
     <div class='modal-content'>
       <div class='modal-header'>
-        <h5 class='modal-title' id='exampleModalLabel'>Profile Settings</h5>
+        <h5 class='modal-title'>Profile Settings</h5>
         <button
           type='button'
           class='btn-close'
@@ -23,21 +23,43 @@
 
           <div class='account-form-wrapper'>
             <label class='email-label'>Email: </label>
-            <span class='email-setting'>{{email}}</span>
+            <span
+              class='email-setting'
+              data-profileInput='email'
+            >{{email}}</span>
+            <button type='button' class='btn edit-btn email-edit'>Edit</button>
           </div>
 
           <div class='account-form-wrapper'>
             <label class='username-label'>Username: </label>
-            <span class='username-setting'>{{username}}</span>
+            <span
+              class='username-setting'
+              data-profileInput='username'
+            >{{username}}</span>
+            <button
+              type='button'
+              class='btn edit-btn username-edit'
+            >Edit</button>
           </div>
 
           <div class='account-form-wrapper'>
             <label class='name-label'>Name: </label>
-            <span class='name-setting'>{{email}}</span>
+            <span class='name-setting' data-profileInput='name'>{{email}}</span>
+            <button type='button' class='btn edit-btn name-edit'>Edit</button>
+
           </div>
 
           <div class='account-form-wrapper'>
             <label class='password-label'>Password: </label>
+            <span
+              class='password-setting'
+              data-profileInput='password'
+            >******</span>
+            <button
+              type='button'
+              class='btn edit-btn password-edit'
+            >Edit</button>
+
           </div>
 
           <div class='account-form-wrapper'>
@@ -53,14 +75,16 @@
           class='btn btn-secondary'
           data-bs-dismiss='modal'
         >Close</button>
-        <button type='button' class='btn btn-primary'>Save changes</button>
+        <button type='button' class='btn btn-primary save-btn'>Save changes</button>
       </div>
     </div>
   </div>
 </div>
-{{! </template> }}
+<script
+  src='https://code.jquery.com/jquery-3.6.0.min.js'
+  integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4='
+  crossorigin='anonymous'
+  type='text/javascript'
+></script>
 
-{{! <div id="content" ></div>
-
-
-<script src='/javascript/profile.js'></script> }}
+<script src='/javascript/profile.js'></script>

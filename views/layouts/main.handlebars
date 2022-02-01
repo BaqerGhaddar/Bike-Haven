@@ -4,7 +4,7 @@
     <meta charset='UTF-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    
+
     {{! favicon link for the browser tab }}
     <link
       rel='shortcut icon'
@@ -88,17 +88,16 @@
               >
                 {{#if loggedIn}}
                   <li><a class='dropdown-item' href='/logout'>Logout</a></li>
-                  <li>
-                    <button
-                      type='button'
-                      class='btn'
+                  <li><a
+                      class='dropdown-item'
                       data-bs-toggle='modal'
                       data-bs-target='#profile-modal'
                     >
                       Profile
-                    </button>
+                    </a>
+
                   </li>
-                  
+
                 {{else}}
                   <li><a class='dropdown-item' href='/login'>Login</a></li>
                 {{/if}}
@@ -134,14 +133,12 @@
       </div>
       <p>©Copyright 2022, Made by Awesome Coders</p>
     </footer>
-    {{! handlebars }}
-    <script type='text/javascript' rel='js/handlebars-v4.0.5.js'></script>
-
     {{! jquery }}
     <script
       src='https://code.jquery.com/jquery-3.6.0.min.js'
       integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4='
       crossorigin='anonymous'
+      type='text/javascript'
     ></script>
   </body>
 
