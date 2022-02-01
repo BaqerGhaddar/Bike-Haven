@@ -3,9 +3,6 @@ const withAuth = require('../../utils/auth');
 const { Wishlist } = require('../../models');
 const resizeArray = require('../../utils/resizeArray');
 
-// middleware auth function
-router.use(withAuth);
-
 router.get('/', async (req, res) => {
   try {
     const dbWishlistData = await Wishlist.findOne({
@@ -22,12 +19,34 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+    const dbWishlistData = await Wishlist.findAll({
+      where: {
+        user_id: req.params.id
+      }
+    });
+    !dbWishlistData
+      ? res.status(404).json({ message: 'No Wishlist found with this id' })
+      : res.json(dbWishlistData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.post('/', async (req, res) => {
   try {
-    await Wishlist.create({
+    const dbWishlistData = await Wishlist.create({
       bike_id: req.body.bike_id,
-      user_id: req.session.user_id
+      user_id: req.body.user_id,
+      part_id: req.body.part_id
     });
+
+    !dbWishlistData
+      ? res.status(404).json({ message: 'No Wishlist found with this id' })
+      : res.json(dbWishlistData);
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
