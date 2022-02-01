@@ -8,11 +8,45 @@
 
 body{
     font-family: 'Montserrat', sans-serif!important;
-    background-image: url("../../public/images/bike-race.jpg");
+    background-image: url("../images/bike-race.jpg");
     background-size: cover;        background-position:center;
     background-attachment: fixed;
     background-position: 80%;
+    font-weight: bold;
+    margin:0 auto 100px auto;
 }
+
+main{
+    padding:0 30px 0 30px;
+}
+
+.bike-card{
+    padding-bottom: 30px;
+}
+
+.featured-header{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(197, 228, 86);
+}
+.featured-header:hover{
+    background-color:rgb(106, 181, 216);
+}
+
+.review-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(197, 228, 86);
+    margin-bottom: 30px;
+}
+.review-title:hover{
+background-color:rgb(106, 181, 216);
+}
+
 
 /* Navbar Section */
 
@@ -41,20 +75,56 @@ font-weight: bold;
     color: rgb(197, 228, 86);
 }
 
-/* Footer Section */
 
-footer{
-    display:block;
-    justify-content: flex-end;
-    padding-top: 20px;
-    position: fixed;
-    bottom:0;
-    width: 100%;
-    background-color: white!important;
-    font-weight: bold;
+/* LOGIN-HANDLEBARS/SIGNUP-FORM */
+
+.signup-form{
+    background-color: white;
+    width:300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: rgb(106, 181, 216) 5px 5px ;
+    margin: 100px auto;
 }
 
-/* Icons contact Section */
+.login-form{
+    background-color: white;
+    width:300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: rgb(106, 181, 216) 5px 5px ;
+    margin: 100px auto;
+}
+
+input{
+    margin:5px auto;
+    border-radius: 5px;
+    border:rgb(78, 75, 75) 1px solid;
+    display:block;
+}
+
+.submit{
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.heart-icon{
+    position: relative;
+    float: right;
+    padding:10px 10px 10px 10px;
+    color:gray;
+}
+
+.heart-icon:hover{
+    color: rgb(197, 228, 86);
+}
+
+.btn-block{
+    text-align: center;
+    width:100%;
+}
+
+/* ICONS CONTACT SECTION */
 .icon{
     padding-right: 50px;
     color: rgb(197, 228, 86);
@@ -65,13 +135,35 @@ footer{
 }
 
 
+/* BIKE CARD INFO HANDLEBARS */
+
+.bike-card{
+    background-color: white;
+    width:100%;
+}
+
+/* FOOTER */
+footer{
+    display:block;
+    justify-content: flex-end;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    background-color: white!important;
+    font-weight: bold;
+    position: fixed;
+    padding:10px auto 10px;
+}
+
+
 footer a{
     justify-content: space-evenly;
 }
 
-footer .icons{
-    padding-bottom: 30px;
-    padding-top: 30px;
+/* ICON FOOTER */
+.icon-laptop{
+    color: rgb(106, 181, 216);
+    padding-left: 10px;
 }
 
 @media screen and (max-width:980px){
@@ -88,6 +180,19 @@ footer .icons{
     .navbar{
         padding-top:20px;
         padding-bottom: 20px;
+    }
+
+.featured-header{
+    font-size: 20px;
+}
+
+.review-title{
+    font-size: 20px;
+}
+
+    footer{
+        padding-top: 0;
+        padding-bottom: 0;
     }
     
 }

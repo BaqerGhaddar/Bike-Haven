@@ -3,7 +3,7 @@
     {{#each this as |bike_row|}}
       <div class='row'>
         {{#each bike_row as |bike|}}
-          <div class='col'>
+          <div class='col-lg-4 col-md-6 col-sm-12'>
             <a href='/bikes/{{bike.id}}'>
               {{>bike-info bike}}
             </a>
