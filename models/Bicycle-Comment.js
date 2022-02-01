@@ -12,7 +12,7 @@ Bicycle_Comment.init(
     },
     comment_text: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
     bike_id: {
       type: DataTypes.INTEGER,

@@ -2,15 +2,14 @@ async function addItemHandler(event) {
   event.preventDefault();
 
   // const id = document.querySelector('.bike-card');
-  const id = $('.bike-card').data('id');
+  const bike_id = $('.bike-card').data('id');
 
-  console.log(typeof id);
-  console.log(id);
+  console.log(bike_id);
   // const part_id = document.querySelector('button').id;
-  const response = await fetch('/wishlist', {
+  const response = await fetch('/api/wishlist', {
     method: 'POST',
     body: JSON.stringify({
-      bike_id: id
+      bike_id
       // part_id
     }),
     headers: {

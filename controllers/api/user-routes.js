@@ -20,9 +20,12 @@ router.get('/:id', async (req, res) => {
       where: { id: req.params.id },
       include: [
         {
-          model: Wishlist,
-          attributes: [['id', 'wishlist_id']],
-          include: [{ model: Bicycle }, { model: Part }]
+          model: Part,
+          through: Wishlist
+        },
+        {
+          model: Bicycle,
+          through: Wishlist
         }
       ]
     });

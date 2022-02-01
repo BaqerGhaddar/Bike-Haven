@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const withAuth = require('../utils/auth');
-const { Wishlist } = require('../models');
-const resizeArray = require('../utils/resizeArray');
+const withAuth = require('../../utils/auth');
+const { Wishlist } = require('../../models');
+const resizeArray = require('../../utils/resizeArray');
 
 // middleware auth function
-router.use(withAuth);
+// router.use(withAuth);
 
 router.get('/', async (req, res) => {
   try {
@@ -25,8 +25,8 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     await Wishlist.create({
-      user_id: req.body.user_id,
-      bike_id: req.body.bike_id
+      bike_id: req.body.bike_id,
+      user_id: req.body.user_id
     });
   } catch (err) {
     console.log(err);
