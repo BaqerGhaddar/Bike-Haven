@@ -33,6 +33,7 @@ function resetPasswordEl() {
 
 async function validatePasswordHandler(event) {
   event.preventDefault();
+  $('#error-password').remove();
   const password = $('.old-password-input').val();
   const response = await fetch('/api/users/login/check', {
     method: 'POST',
@@ -50,7 +51,7 @@ async function validatePasswordHandler(event) {
       $('.old-password-form').after(inputEl);
       $('.old-password-form').remove();
     } else {
-      const incorrectEl = $('<span>').text(result.message);
+      const incorrectEl = $('<span id="error-password">').text(result.message);
       $('.old-password-form').append(incorrectEl);
       return;
     }
