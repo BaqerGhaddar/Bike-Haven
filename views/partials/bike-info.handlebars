@@ -1,16 +1,17 @@
 <div class='bike-card'>
   <div id='bike_id'>
+    <button class='wishlist-btn btn btn-outline-dark btn-block'>
+      + Add to Wishlist</button>
+    <div class='btn btn-block btn-dark' id='est_title'>{{brand}}
+      <b>{{model}}</b>
+      {{id}}<i class='heart-icon fas fa-heart fa-2x'></i>
+    </div>
     {{#if this}}
-      <p> {{loggedIn}}</p>
-
-        <button class='wishlist-btn' data-id='{{id}}'> + Add to Wishlist</button>
-      <div id='est_title'>{{brand}} <b>{{model}}</b> {{id}}</div>
       <img
         src='/images/bikes/{{filename}}'
         class='img-thumbnail img img-responsive'
       />
-      <span>Price: {{price}}</span>
+      <span class='btn btn-outline-dark btn-block'>Price: {{price}}</span>
     {{/if}}
   </div>
 </div>
-

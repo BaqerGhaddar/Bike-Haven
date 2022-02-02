@@ -1,57 +1,57 @@
-{{#if isSignup}}
-  <form class='signup-form'>
-    <div>
-      <div class='login-wrapper'>
-        <h2 class='login-header'> Signup </h2>
-      </div>
-      <div class='input-wrapper'>
-        <label for='name-signup'>name:</label>
-        <input type='text' id='name-signup' />
-      </div>
-      <div class='input-wrapper'>
-        <label for='email-signup'>Email:</label>
-        <input type='text' id='email-signup' />
-      </div>
-      <div class='input-wrapper'>
-        <label for='username-signup'>Username:</label>
-        <input type='text' id='username-signup' />
-      </div>
-      <div class='input-wrapper'>
-        <label for='password-signup'>Password:</label>
-        <input type='password' id='password-signup' />
-      </div>
-      <div class='input-wrapper'>
-        <button class='submit' type='submit'> Signup! </button>
-      </div>
-      <div class='input-wrapper'>
-        <a class='switch-login' href='/login'>Back to login</a>
-      </div>
+<div class=''>
+  {{#if isSignup}}
+    <form class='signup-form'>
+      <div>
+        <div class='login-wrapper'>
+          <h2 class='login-header'> Signup </h2>
+        </div class='container-signupform'>
+        <div class='input-wrapper'>
+          <label for='email-signup'>Email:</label>
+          <input type='text' placeholder=" Enter email" id='email-signup' />
+        </div>
+        <div class='input-wrapper'>
+          <label for='username-signup'>Username:</label>
+          <input type='text' placeholder="Enter username" id='username-signup' />
+        </div>
+        <div class='input-wrapper'>
+          <label for='password-signup'>Password:</label>
+          <input type='password' placeholder="Enter password" id='password-signup' />
+        </div>
+        <div class='input-wrapper'>
+          <button class='submit btn btn-outline-dark' type='submit'> Signup! </button>
+        </div>
+        <div class='input-wrapper'>
+          <a class='switch-login' href='/login'>Back to login</a>
+        </div>
 
-    </div>
-  </form>
-{{else}}
-  <form class='login-form'>
-    <div>
-      <div class='login-wrapper'>
-        <h2 class='login-header'> Login </h2>
       </div>
-      <div class='input-wrapper'>
-        <label for='username-login'>Username:</label>
-        <input type='text' id='username-login' />
+    </form>
+  {{else}}
+    <form class='login-form'>
+      <div>
+        <div class='login-wrapper'>
+          <h2 class='login-header'> Login </h2>
+        </div>
+        <div class='input-wrapper'>
+          <label for='username-login'>Username:</label>
+          <input type='text' placeholder="Enter username" id='username-login' />
+        </div>
+        <div class='input-wrapper'>
+          <label for='password-login'>Password:</label>
+          <input type='password' placeholder="Enter password" id='password-login' />
+        </div>
+        <div class='input-wrapper login-button'>
+          <button class='submit btn btn-outline-dark' type='submit'> Login! </button>
+        </div>
+        <div class='input-wrapper'>
+          <a class='switch-login' href='/login/?isSignup=true'>Sign up instead</a>
+        </div>
       </div>
-      <div class='input-wrapper'>
-        <label for='password-login'>Password:</label>
-        <input type='password' id='password-login' />
-      </div>
-      <div class='input-wrapper login-button'>
-        <button class='submit' type='submit'> Login! </button>
-      </div>
-      <div class='input-wrapper'>
-        <a class='switch-login' href='/login/?isSignup=true'>Sign up instead</a>
-      </div>
-    </div>
-  </form>
+    </form>
 
-{{/if}}
+  {{/if}}
+
+</div>
+
 
 <script src='/javascript/login.js'></script>

@@ -29,7 +29,7 @@ main{
     margin-bottom: 30px;
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     background-color: rgb(197, 228, 86);
 }
 .featured-header:hover{
@@ -39,10 +39,9 @@ main{
 .review-title{
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     background-color: rgb(197, 228, 86);
     margin-bottom: 30px;
-    width:50%;
 }
 .review-title:hover{
 background-color:rgb(106, 181, 216);
@@ -77,8 +76,43 @@ font-weight: bold;
 }
 
 
-.bike-card{
+/* LOGIN-HANDLEBARS/SIGNUP-FORM */
+
+.signup-form{
     background-color: white;
+    width:300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: rgb(106, 181, 216) 5px 5px ;
+    margin: 50px auto;
+    padding-top:15px;
+    padding-bottom: 15px;
+}
+
+.login-form{
+    background-color: white;
+    width:300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: rgb(106, 181, 216) 5px 5px ;
+    margin: 50px auto;
+    padding-top:15px;
+    padding-bottom: 15px;
+}
+
+
+input{
+    margin:5px auto;
+    border-radius: 10px;
+    border:rgb(78, 75, 75) 1px solid;
+    display:block;
+    width:80%;
+    height: 40px;
+}
+
+.submit{
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .heart-icon{
@@ -97,20 +131,9 @@ font-weight: bold;
     width:100%;
 }
 
-/* Footer Section */
 
-footer{
-    display:block;
-    justify-content: flex-end;
-    padding-top: 20px;
-    position: fixed;
-    bottom:0;
-    width: 100%;
-    background-color: white!important;
-    font-weight: bold;
-}
 
-/* Icons contact Section */
+/* ICONS CONTACT SECTION */
 .icon{
     padding-right: 50px;
     color: rgb(197, 228, 86);
@@ -120,30 +143,37 @@ footer{
    color: rgb(106, 181, 216);
 }
 
-.icon-laptop{
-    color: rgb(132, 124, 124);
-    padding-left: 10px;
-}
+
+/* BIKE CARD INFO HANDLEBARS */
 
 .bike-card{
+    background-color: white;
     width:100%;
 }
 
+/* FOOTER */
 footer{
+    display:block;
+    justify-content: flex-end;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    background-color: white!important;
+    font-weight: bold;
     position: fixed;
     padding:10px auto 10px;
 }
-    
 
 
 footer a{
     justify-content: space-evenly;
 }
 
-/* footer .icons{
-    padding-bottom: 30px;
-    padding-top: 30px;
-} */
+/* ICON FOOTER */
+.icon-laptop{
+    color: rgb(106, 181, 216);
+    padding-left: 10px;
+}
 
 @media screen and (max-width:980px){
     .navbar-brand{
@@ -185,6 +215,14 @@ footer a{
     }
     .navbar-collapse{
         font-size: 14px;
+    }
+
+    .bike-card{
+        font-size: 16px;
+    }
+
+    .heart-icon{
+        font-size: 20px;
     }
     .text-center{
         font-size: small;
