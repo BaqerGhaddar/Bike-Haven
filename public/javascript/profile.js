@@ -110,7 +110,9 @@ async function saveChangesHandler(event) {
 
   const password = $('.password-setting').text().trim();
 
-  const body = password ? { email, username, password, name } : { email, username };
+  const body = password
+    ? { email, username, password, name }
+    : { email, username, name };
 
   console.log(body);
   resetPasswordEl();
@@ -141,4 +143,8 @@ $(function () {
     $('.edit-btn').on('click', editFieldHandler);
     $('.save-btn').on('click', saveChangesHandler);
   });
+});
+
+$('.cart-btn').on('click', function () {
+  document.location.replace('/wishlist');
 });
