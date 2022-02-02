@@ -2,27 +2,26 @@ async function addItemHandler(event) {
   event.preventDefault();
 
   // const id = document.querySelector('.bike-card');
-  const bike_id = $('.bike-card').data('id');
+  console.log(event.target);
+  const bike_id = $(event.target).data('id');
 
   console.log(bike_id);
   // const part_id = document.querySelector('button').id;
-  const response = await fetch('/api/wishlist', {
+  const response = await fetch(`/api/wishlist/bikes/${bike_id}`, {
     method: 'POST',
-    body: JSON.stringify({
-      bike_id
-    }),
     headers: {
       'Content-Type': 'application/json'
     }
   });
 
-  if (response.ok) {
-    document.location.replace('/wishlist');
+  const data = await response.json();
+
+  if (!response.ok) {
+    alert(data.errors[0].message);
   } else {
-    alert(response.statusText);
+    alert('Item added to wishlist');
+    // document.location.replace('/wishlist');
   }
 }
 
-document
-  .querySelector('.wishlist-btn')
-  .addEventListener('click', addItemHandler);
+$('.wishlist-btn').on('click', addItemHandler);

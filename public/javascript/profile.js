@@ -110,7 +110,7 @@ async function saveChangesHandler(event) {
 
   const password = $('.password-setting').text().trim();
 
-  const body = password ? { email, username, password } : { email, username };
+  const body = password ? { email, username, password, name } : { email, username };
 
   console.log(body);
   resetPasswordEl();

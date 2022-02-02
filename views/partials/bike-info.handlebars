@@ -1,8 +1,10 @@
-<div class='bike-card' data-id='{{id}}'>
+<div class='bike-card'>
   <div id='bike_id'>
-    <button class='wishlist-btn'> + Add to Wishlist</button>
-    <div id='est_title'>{{brand}} <b>{{model}}</b> {{id}}</div>
     {{#if this}}
+      <p> {{loggedIn}}</p>
+
+        <button class='wishlist-btn' data-id='{{id}}'> + Add to Wishlist</button>
+      <div id='est_title'>{{brand}} <b>{{model}}</b> {{id}}</div>
       <img
         src='/images/bikes/{{filename}}'
         class='img-thumbnail img img-responsive'
@@ -12,4 +14,3 @@
   </div>
 </div>
 
-<script src='/javascript/add-item.js'></script>
