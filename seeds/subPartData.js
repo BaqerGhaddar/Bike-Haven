@@ -1,6 +1,6 @@
-const { Part } = require('../models');
+const { SubPart } = require('../models');
 
-const partData = [
+const SubPartData = [
   {
     part_id: 1,
     name: 'Parlee Chebacco',
@@ -43,6 +43,6 @@ const partData = [
   }
 ];
 
-const seedParts = () => Part.bulkCreate(partData);
+const seedSubParts = () => SubPart.bulkCreate(SubPartData);
 
-module.exports = seedParts;
+module.exports = seedSubParts;

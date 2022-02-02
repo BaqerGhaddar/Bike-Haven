@@ -18,5 +18,6 @@ module.exports = {
   User,
   Bicycle,
   Bicycle_Comment,
-  Part
+  Part,
+  SubPart
 };

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Part, SubPart, User } = require('../../models');
+const { Part, SubPart } = require('../../models');
 
 // get all parts with associated comments
 router.get('/', (req, res) => {

@@ -47,7 +47,7 @@ SubPart.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'part'
+    modelName: 'subpart'
   }
 );
 
