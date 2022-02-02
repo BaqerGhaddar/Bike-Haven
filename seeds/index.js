@@ -1,8 +1,8 @@
 const seedBikes = require('./bikeData');
 const seedParts = require('./partData');
 const seedUser = require('./userData');
+const seedSubParts = require('./subPartData');
 const sequelize = require('../config/connection');
-const seedwishlist = require('./wishlistData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -13,7 +13,7 @@ const seedAll = async () => {
 
   await seedUser();
 
-  await seedwishlist();
+  await seedSubParts();
 
   process.exit(0);
 };
