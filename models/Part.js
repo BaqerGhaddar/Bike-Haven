@@ -12,16 +12,7 @@ Part.init(
       autoIncrement: true
     },
     type: {
-<<<<<<< HEAD
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    stock: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-=======
       type: DataTypes.STRING
->>>>>>> develop
     },
     filename: {
       type: DataTypes.STRING,
