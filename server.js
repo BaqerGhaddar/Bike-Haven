@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const routes = require('./controllers');
+require('dotenv').config();
 
 //db
 const sequelize = require('./config/connection');
@@ -17,7 +18,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-  secret: 'Super secret secret', // store in .env folder, used to check if session is modified
+  secret: process.env.SESSION_SECRET, // store in .env folder, used to check if session is modified
   cookie: {},
   resave: false,
   saveUninitialized: true,

@@ -1,18 +1,14 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Part_Comment extends Model {}
+class SubPart extends Model {}
 
-Part_Comment.init(
+SubPart.init(
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
-    },
-    comment_text: {
-      type: DataTypes.TEXT,
-      allowNull: false
     },
     part_id: {
       type: DataTypes.INTEGER,
@@ -22,13 +18,28 @@ Part_Comment.init(
         key: 'id'
       }
     },
-    user_id: {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    stock: {
       type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    price: {
+      type: DataTypes.DECIMAL(6, 2),
       allowNull: false,
-      references: {
-        model: 'user',
-        key: 'id'
+      validate: {
+        isDecimal: true
       }
+    },
+    quality_type: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   },
   {
@@ -36,8 +47,8 @@ Part_Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'part_comment'
+    modelName: 'subpart'
   }
 );
 
-module.exports = Part_Comment;
+module.exports = SubPart;

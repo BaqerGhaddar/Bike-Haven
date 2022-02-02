@@ -5,6 +5,7 @@ const getUser =  async (req, res, next) => {
       const current_user = req.session.loggedIn
         ? await User.findOne({
             where: { id: req.session.user_id },
+            attributes: ['id','username','email', 'name' ],
             raw: true,
             nest: true
           })
