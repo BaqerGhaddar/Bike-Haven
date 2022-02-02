@@ -18,7 +18,7 @@ router.get('/bikes', (req, res) => {
     ? res.status(404).json({ message: 'User not found' })
     : res
         .status(200)
-        .json({ parts: req.session.wishlist.parts, user: req.current_user });
+        .json({ bikes: req.session.wishlist.bikes, user: req.current_user });
 });
 
 router.get('/parts', (req, res) => {
@@ -26,7 +26,7 @@ router.get('/parts', (req, res) => {
     ? res.status(404).json({ message: 'User not found' })
     : res
         .status(200)
-        .json({ bikes: req.session.wishlist.bikes, user: req.current_user });
+        .json({ parts: req.session.wishlist.parts, user: req.current_user });
 });
 
 router.post('/bikes/:id', async (req, res) => {

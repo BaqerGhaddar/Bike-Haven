@@ -1,18 +1,14 @@
 const router = require('express').Router();
-const { Part, Part_Comment, User } = require('../../models');
+const { Part, SubPart } = require('../../models');
 
 // get all parts with associated comments
 router.get('/', (req, res) => {
   Part.findAll({
-    attributes: ['id', 'type', 'stock', 'price'],
+    attributes: ['id', 'type'],
     include: [
       {
-        model: Part_Comment,
-        attributes: ['id', 'comment_text', 'part_id', 'user_id'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
+        model: SubPart,
+        attributes: ['id', 'part_id', 'name', 'stock', 'price', 'quality_type']
       }
     ]
   })
@@ -29,15 +25,11 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'type', 'stock', 'price'],
+    attributes: ['id', 'type'],
     include: [
       {
-        model: Part_Comment,
-        attributes: ['id', 'comment_text', 'part_id', 'user_id'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
+        model: SubPart,
+        attributes: ['id', 'part_id', 'name', 'stock', 'price', 'quality_type']
       }
     ]
   })
