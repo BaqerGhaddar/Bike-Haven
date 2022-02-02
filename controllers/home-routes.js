@@ -109,9 +109,7 @@ router.get('/wishlist', async (req, res) => {
 });
 
 router.get('/customize', async (req, res) => {
-  const parts = await Part.findAll({ raw: true, nest: true });
   res.render('customize', {
-    parts,
     loggedIn: req.session.loggedIn,
     current_user: req.current_user
   });
