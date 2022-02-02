@@ -8,26 +8,16 @@ Part.init(
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      allowNull: false,
       autoIncrement: true
     },
     type: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    stock: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     filename: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    price: {
-      type: DataTypes.DECIMAL(6, 2),
-      allowNull: false,
-      validate: {
-        isDecimal: true
-      }
     }
   },
   {

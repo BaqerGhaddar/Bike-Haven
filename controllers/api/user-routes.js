@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { User, Bicycle, Part } = require('../../models');
-const {ValidationError} = require('sequelize');
-
+const { ValidationError } = require('sequelize');
 
 // get all users
 router.get('/', async (req, res) => {
@@ -19,17 +18,7 @@ router.get('/:id', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       attributes: { exclude: ['password'] },
-      where: { id: req.params.id },
-      include: [
-        {
-          model: Part,
-          through: Wishlist
-        },
-        {
-          model: Bicycle,
-          through: Wishlist
-        }
-      ]
+      where: { id: req.params.id }
     });
     !dbUserData
       ? res.status(404).json({ message: 'No user found with this id' })
@@ -81,7 +70,7 @@ router.post('/', async (req, res) => {
   } catch (err) {
     if (err instanceof ValidationError) {
       res.status(500).json(err);
-    }    
+    }
   }
 });
 
