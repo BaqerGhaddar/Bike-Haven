@@ -1,7 +1,13 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const getUser = require('../utils/getUser');
-const { Bicycle, Bicycle_Comment, User } = require('../models');
+const {
+  Bicycle,
+  Bicycle_Comment,
+  User,
+  Part,
+  Part_Comment
+} = require('../models');
 const { resizeArray } = require('../utils/arrays');
 
 // middleware auth function
@@ -97,6 +103,15 @@ router.get('/bikes/:id', async (req, res) => {
 router.get('/wishlist', async (req, res) => {
   res.render('wishlist', {
     wishlist: req.session.wishlist,
+    loggedIn: req.session.loggedIn,
+    current_user: req.current_user
+  });
+});
+
+router.get('/customize', async (req, res) => {
+  const parts = await Part.findAll({ raw: true, nest: true });
+  res.render('customize', {
+    parts,
     loggedIn: req.session.loggedIn,
     current_user: req.current_user
   });

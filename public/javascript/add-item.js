@@ -24,4 +24,4 @@ async function addItemHandler(event) {
   }
 }
 
-$('.wishlist-btn').on('click', addItemHandler);
+$('.wishlist-icon').on('click', addItemHandler);
