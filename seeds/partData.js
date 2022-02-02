@@ -16,8 +16,7 @@ const partData = [
   {
     type: 'Flat Pedals',
     stock: 158,
-    price: 129.0,
-    filename: 'kona-jake-the-snake.jpg'
+
   },
   {
     type: 'LED Handlebar Headlight',

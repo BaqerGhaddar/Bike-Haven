@@ -11,7 +11,7 @@ Part.init(
       autoIncrement: true
     },
     type: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false
     },
     stock: {
