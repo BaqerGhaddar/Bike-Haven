@@ -4,6 +4,8 @@ async function signupFormHandler(event) {
   const username = document.querySelector('#username-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
+  const name = document.querySelector('#name-signup').value.trim();
+
 
   if (username && password && email) {
     const emailResponse = await fetch('/api/users/email', {
@@ -19,11 +21,17 @@ async function signupFormHandler(event) {
 
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ email, username, password }),
+      body: JSON.stringify({ email, username, password, name }),
       headers: { 'Content-Type': 'application/json' }
     });
     // Check response and redirect if sucess
-    response.ok ? document.location.replace('/') : alert(response.statusText);
+    const data = await response.json();
+
+    if (!response.ok) {
+      alert(data.errors[0].message)
+    } else {
+      document.location.replace('/');
+    }
   }
 }
 
@@ -58,8 +66,11 @@ if (document.querySelector('.login-form')) {
 }
 
 showError = () => {
-    loginFormEl = document.querySelector('.login-button');
-    errorEl = document.createElement('p')
-    errorEl.textContent = 'Error in login! Check password or username'
-    loginFormEl.append(errorEl)
+  if (document.querySelector('#error-password'))
+    document.querySelector('#error-password').remove();
+  loginFormEl = document.querySelector('.login-button');
+  errorEl = document.createElement('p');
+  errorEl.textContent = 'Error in login! Check password or username';
+  errorEl.setAttribute('id', 'error-password');
+  loginFormEl.append(errorEl);
 };

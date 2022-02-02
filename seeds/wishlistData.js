@@ -12,6 +12,15 @@ const wishlistData = [
     part_id: 3
   },
   {
+    user_id: 1,
+    part_id: 5
+  },
+  {
+    user_id: 2,
+    bike_id: 2,
+    part_id: 3
+  },
+  {
     user_id: 2,
     bike_id: 3,
     part_id: 4
