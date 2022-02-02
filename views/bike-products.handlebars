@@ -1,1 +1,6 @@
-{{>bikes bikeData}}
+{{> bikes bikeData }}
+
+{{#if loggedIn}}
+        <script src='/javascript/add-item.js'></script>
+    {{/if}}
+

@@ -1,0 +1,24 @@
+<section class="wishlist-section">
+    <div class="title-wrapper">
+        <h2 class="wishlist-title">Your Wishlist</h2>
+    </div>
+
+    <div class="title-wrapper">
+        <h3 class="bikes-title">Pre-built Bikes</h3>
+    </div>
+
+    <ul class="bike-list">
+        {{#each wishlist.bikes as |bikes|}}
+        {{>bike-info bikes}}
+        {{/each}}
+    </ul>
+
+    <div class="title-wrapper">
+        <h3 class="bikes-title">Your Custom Bike</h3>
+    </div>
+    <ul class="part-list">
+        {{#each wishlist.parts as |part|}}
+        {{>bike-info part}}
+        {{/each}}
+    </ul>
+</section>

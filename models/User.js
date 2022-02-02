@@ -24,6 +24,10 @@ User.init(
         len: [4]
       }
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -38,7 +42,7 @@ User.init(
       validate: {
         len: [4]
       }
-    },
+    }
   },
   {
     hooks: {
@@ -59,10 +63,12 @@ User.init(
       },
       // set up beforeUpdate lifecycle "hook" functionality
       async beforeUpdate(updatedUserData) {
-        updatedUserData.password = await bcrypt.hash(
-          updatedUserData.password,
-          10
-        );
+        if (updatedUserData.changed('password')) {
+          updatedUserData.password = await bcrypt.hash(
+            updatedUserData.password,
+            10
+          );
+        }
         return updatedUserData;
       }
     },

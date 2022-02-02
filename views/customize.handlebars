@@ -1,4 +1,8 @@
-<section>
+<section class="customize-section">
+
+    {{#each wishlist.parts as |part}}
+        {{>part part}}
+    {{/each}}
     {{>bike-info bike }}
 
     {{#if loggedIn}}
@@ -15,7 +19,3 @@
     
     {{!-add items}}
 </section>
-
-{{#if loggedIn}}
-        <script src='/javascript/add-item.js'></script>
-    {{/if}}

@@ -1,10 +1,18 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { Bicycle, Bicycle_Comment, User } = require('../models');
-const resizeArray = require('../utils/resizeArray');
+const getUser = require('../utils/getUser');
+const {
+  Bicycle,
+  Bicycle_Comment,
+  User,
+  Part,
+  Part_Comment
+} = require('../models');
+const { resizeArray } = require('../utils/arrays');
 
 // middleware auth function
 router.use(withAuth);
+router.use(getUser);
 
 router.get('/', async (req, res) => {
   try {
@@ -16,16 +24,8 @@ router.get('/', async (req, res) => {
     });
     featured_bikes = resizeArray(dbBikeData);
 
-    const current_user = req.session.loggedIn
-      ? await User.findOne({
-          where: { id: req.session.user_id },
-          raw: true,
-          nest: true
-        })
-      : {};
-
     res.render('homepage', {
-      current_user,
+      current_user: req.current_user,
       featured_bikes,
       page: 'homepage',
       loggedIn: req.session.loggedIn
@@ -60,7 +60,11 @@ router.get('/bikes', async (req, res) => {
     if (!dbBikeData) return;
     const bikeData = resizeArray(dbBikeData, 3);
     console.log(bikeData);
-    res.render('bike-products', { bikeData, loggedIn: req.session.loggedIn });
+    res.render('bike-products', {
+      bikeData,
+      loggedIn: req.session.loggedIn,
+      current_user: req.current_user
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -85,10 +89,30 @@ router.get('/bikes/:id', async (req, res) => {
       return;
     }
     console.log(bike);
-    res.render('single-bike', { bike, loggedIn: req.session.loggedIn });
+    res.render('single-bike', {
+      bike,
+      loggedIn: req.session.loggedIn,
+      current_user: req.current_user
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+router.get('/wishlist', async (req, res) => {
+  res.render('wishlist', {
+    wishlist: req.session.wishlist,
+    loggedIn: req.session.loggedIn,
+    current_user: req.current_user
+  });
+});
+
+router.get('/customize', async (req, res) => {
+  res.render('customize', {
+    loggedIn: req.session.loggedIn,
+    current_user: req.current_user
+  });
+});
+
 module.exports = router;
