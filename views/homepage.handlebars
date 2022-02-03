@@ -7,22 +7,20 @@
 <section class='review-section'>
   <h1 class='review-title btn btn-lg'>Reviews</h1>
   <ul class='reviews'>
-    {{#with post as |post|}}
+    {{!-- {{#with post as |post|}}
       <li>
         {{post created_at}}
 
         <div class='meta'>
-          {{part_comment.user}}
           {{bicycle_comment.user.username}}
           on
-          {{part_comment.created_at}}
           by
           {{user_name}}
           |
           <a href='/post/{{post.id}}'>{{post.comments.length}} comment(s)</a>
         </div>
       </li>
-    {{/with}}
+    {{/with}} --}}
   </ul>
 </section>
 
