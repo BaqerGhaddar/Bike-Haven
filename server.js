@@ -11,14 +11,14 @@ const sequelize = require('./config/connection');
 
 // Handlebars
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({  }); // Setup handlebars with helper functions
+const hbs = exphbs.create({}); // Setup handlebars with helper functions
 
 // Session / cookie
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-  secret: process.env.SESSION_SECRET, // store in .env folder, used to check if session is modified
+  secret: 'hello',
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -26,7 +26,6 @@ const sess = {
     db: sequelize
   })
 };
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 
