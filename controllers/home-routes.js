@@ -5,8 +5,7 @@ const {
   Bicycle,
   Bicycle_Comment,
   User,
-  Part,
-  Part_Comment
+
 } = require('../models');
 const { resizeArray } = require('../utils/arrays');
 
@@ -17,12 +16,12 @@ router.use(getUser);
 router.get('/', async (req, res) => {
   try {
     const dbBikeData = await Bicycle.findAll({
-      order: [['stock', 'DESC']],
+      order: [['brand', 'DESC']],
       limit: 3,
       raw: true,
       nest: true
     });
-    featured_bikes = resizeArray(dbBikeData);
+    featured_bikes = resizeArray(dbBikeData, 3);
 
     res.render('homepage', {
       current_user: req.current_user,

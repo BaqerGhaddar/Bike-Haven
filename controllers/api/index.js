@@ -11,7 +11,7 @@ router.use('/bikes', bikeRoutes);
 router.use('/bikeComments', bikeCommentRoutes);
 router.use('/partComments', PartCommentRoutes);
 router.use('/users', userRoutes);
-router.use('/parts', partRoutes);
+router.use('/customize', partRoutes);
 router.use('/wishlist', wishlistRoutes);
 
 module.exports = router;

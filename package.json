@@ -1,36 +1,36 @@
 {
-    "name": "bike-haven",
-    "version": "1.0.0",
-    "description": "An Online Bike Store 🚲",
-    "main": "server.js",
-    "scripts": {
-        "start": "node server.js",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "seed": "node seeds/index.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/arslan-razi/Bike-Haven.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/arslan-razi/Bike-Haven/issues"
-    },
-    "homepage": "https://github.com/arslan-razi/Bike-Haven#readme",
-    "dependencies": {
-        "bcrypt": "^5.0.1",
-        "connect-session-sequelize": "^7.1.2",
-        "dotenv": "^14.3.0",
-        "eslint": "^8.7.0",
-        "express": "^4.17.2",
-        "express-handlebars": "^6.0.2",
-        "express-session": "^1.17.2",
-        "mysql2": "^2.3.3",
-        "nodemon": "^2.0.15",
-        "sequelize": "^6.14.1"
-    },
-    "devDependencies": {
-        "prettier": "2.5.1"
-    }
+  "name": "bike-haven",
+  "version": "1.0.0",
+  "description": "An Online Bike Store 🚲",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arslan-razi/Bike-Haven.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arslan-razi/Bike-Haven/issues"
+  },
+  "homepage": "https://github.com/arslan-razi/Bike-Haven#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^14.3.0",
+    "eslint": "^8.7.0",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.14.1"
+  },
+  "devDependencies": {
+    "prettier": "2.5.1"
+  }
 }
