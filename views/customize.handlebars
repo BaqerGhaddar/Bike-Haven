@@ -1,4 +1,8 @@
 <section class="customize-section">
+
+    {{#each wishlist.parts as |part}}
+        {{>part part}}
+    {{/each}}
     {{>bike-info bike }}
 
     {{#if loggedIn}}
