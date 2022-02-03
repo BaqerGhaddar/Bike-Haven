@@ -12,7 +12,8 @@ Part.init(
       autoIncrement: true
     },
     type: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
     filename: {
       type: DataTypes.STRING,
