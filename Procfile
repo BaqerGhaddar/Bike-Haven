@@ -1,2 +1,2 @@
 
-web: npm run seed & npm start
+worker: npm run seed & npm start
