@@ -17,7 +17,7 @@ async function addItemHandler(event) {
   const data = await response.json();
 
   if (!response.ok) {
-    alert(data.errors[0].message);
+    alert(data.errors);
   } else {
     alert('Item added to wishlist');
     // document.location.replace('/wishlist');
