@@ -42,10 +42,6 @@ main {
   height: 100%;
 }
 
-.bike-card {
-  padding-bottom: 30px;
-}
-
 .bike-img {
   width: 80%; /* You can set the dimensions to whatever you want */
   height: auto;
@@ -70,6 +66,7 @@ main {
   font-size: 20px;
   background-color: rgb(197, 228, 86);
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 .review-title:hover {
   background-color: rgb(106, 181, 216);
@@ -108,6 +105,12 @@ main {
 .navbar-toggler:hover {
   text-decoration: none;
   color: rgb(197, 228, 86);
+}
+
+.floatRight{
+  position:relative;
+  padding-top: 20px;
+  padding-right: 30px;
 }
 
 #main-display_image{
@@ -193,6 +196,7 @@ input {
 .bike-card {
   background-color: white;
   width: 100%;
+  padding-bottom: 30px;
 }
 
 /* FOOTER */
@@ -221,7 +225,11 @@ footer a {
 @media screen and (max-width: 980px) {
   .navbar-brand {
     font-size: 30px;
+    align-content: center;
   }
+  .floatRight{
+    padding-right: 30px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -231,6 +239,9 @@ footer a {
   .navbar {
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+  .floatRight{
+  padding-right: 30px;
   }
 
   .featured-header {
@@ -249,6 +260,10 @@ footer a {
 @media screen and (max-width: 575px) {
   .navbar-brand {
     font-size: 20px;
+  }
+
+  .floatRight{
+    display: none;
   }
   .container-fluid {
     flex-direction: column;
