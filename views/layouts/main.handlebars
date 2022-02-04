@@ -78,9 +78,11 @@
             </ul>
           </li>
         </ul>
+         {{#if loggedIn}}
         <div  class='border border-dark ' id='main-display_image'>
           <img class='' id='main-image' src='/images/user/{{current_user.username}}.png' />
         </div>
+        {{/if}}
       </div>
     </div>
   </nav>
