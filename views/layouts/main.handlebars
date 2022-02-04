@@ -64,11 +64,11 @@
             </a>
             <ul class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
               {{#if loggedIn}}
-                <li><a class='dropdown-item' href='/logout'>Logout</a></li>
+                <li><a class='dropdown-item' id="logout-option" href='/logout'>Logout</a></li>
                 <li>
-                  <button type='button' class='btn' data-bs-toggle='modal' data-bs-target='#profile-modal'>
+                  <a class='dropdown-item' href='#' data-bs-toggle='modal' data-bs-target='#profile-modal'>
                     Profile
-                  </button>
+                  </a>
                 </li>
 
               {{else}}
@@ -78,12 +78,16 @@
             </ul>
           </li>
         </ul>
+        <div  class='border border-dark ' id='main-display_image'>
+          <img class='' id='main-image' src='/images/user/{{current_user.username}}.png' />
+        </div>
       </div>
     </div>
   </nav>
-
+  
   {{#if loggedIn}}
     {{>profile-modal current_user}}
+    <script src='/javascript/logout.js'></script>
   {{/if}}
 
   {{! body for the browser }}
