@@ -18,7 +18,33 @@
 
           <div class='account-form-wrapper'>
             <h2 class='avatar-header'>Avatar</h2>
-            <img src='/images/avatar/{{picture}}' />
+            <div class='image-container'>
+              <div id='display_image'>
+                <img id='profile-image' src='/images/user/{{username}}.png' />
+              </div>
+              <button type='button' class='btn btn-primary' id='avatar-button'>Change Avator</button>
+              <div class='image-form-wrapper'>
+                {{!-- <form
+                  class='mt-4'
+                  action='/api/upload'
+                  method='POST'
+                  enctype='multipart/form-data'
+                  id='change-avatar-form'
+                > --}}
+                <form class="mt-4" id='change-avatar-form'>
+                  <div class='form-group'>
+                    <input
+                      type='file'
+                      name='file'
+                      id='input-file'
+                      class='form-control-file border'
+                    />
+                  </div>
+                  <button type='button' class='btn btn-primary' id='change-avatar-button'>Replace</button>
+                </form>
+              </div>
+
+            </div>
           </div>
 
           <div class='account-form-wrapper'>

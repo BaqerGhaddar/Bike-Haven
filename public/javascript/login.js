@@ -6,8 +6,7 @@ async function signupFormHandler(event) {
   const email = document.querySelector('#email-signup').value.trim();
   const name = document.querySelector('#name-signup').value.trim();
 
-
-  if (username && password && email) {
+  if (username && password && email && name) {
     const emailResponse = await fetch('/api/users/email', {
       method: 'POST',
       body: JSON.stringify({ email }),
@@ -28,7 +27,7 @@ async function signupFormHandler(event) {
     const data = await response.json();
 
     if (!response.ok) {
-      alert(data.errors[0].message)
+      alert(data.errors.message);
     } else {
       document.location.replace('/');
     }
@@ -52,6 +51,8 @@ async function loginFormHandler(event) {
     });
     // Check response
     response.ok ? document.location.replace('/') : showError();
+  } else {
+    showError();
   }
 }
 

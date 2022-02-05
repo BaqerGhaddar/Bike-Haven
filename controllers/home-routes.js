@@ -1,12 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const getUser = require('../utils/getUser');
-const {
-  Bicycle,
-  Bicycle_Comment,
-  User,
-
-} = require('../models');
+const { Bicycle, Bicycle_Comment, User } = require('../models');
 const { resizeArray } = require('../utils/arrays');
 
 // middleware auth function
@@ -44,9 +39,6 @@ router.get('/login', (req, res) => {
 // logout user
 router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end(); // 204 no content, success nothing to do
-    });
     res.render('logout');
   } else {
     res.redirect('/');
@@ -112,6 +104,10 @@ router.get('/customize', async (req, res) => {
     loggedIn: req.session.loggedIn,
     current_user: req.current_user
   });
+});
+
+router.get('/home',(req, res) => {
+  res.render('home');
 });
 
 module.exports = router;

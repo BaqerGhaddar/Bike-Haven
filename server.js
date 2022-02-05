@@ -3,6 +3,7 @@ const path = require('path');
 const routes = require('./controllers');
 require('dotenv').config();
 
+
 //db
 const sequelize = require('./config/connection');
 
