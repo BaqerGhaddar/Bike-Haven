@@ -3,6 +3,8 @@ const path = require('path');
 const routes = require('./controllers');
 require('dotenv').config();
 
+
+
 //db
 const sequelize = require('./config/connection');
 
@@ -12,6 +14,7 @@ const sequelize = require('./config/connection');
 // Handlebars
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({}); // Setup handlebars with helper functions
+
 
 // Session / cookie
 const session = require('express-session');
