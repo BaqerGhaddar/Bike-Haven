@@ -18,39 +18,7 @@
 
           <div class='account-form-wrapper'>
             <h2 class='avatar-header'>Avatar</h2>
-            <div class='image-container'>
-              <div id='display_image'>
-                {{#each avatarImage}}
-                <img class="avatar-img" id='profile-image' src='/images/user/{{uploadFile.user_id}}.png' />
-              </div>
-              {{else}}
-              <img class="avatar-img" id='profile-image' src='/images/user/{{default.png}}' />
-              </div>
-              <button type='button' class='btn btn-primary' id='avatar-button'>Change Avator</button>
-              <div class='image-form-wrapper'>
-                {{/each}}
-                {{!-- <form
-                  class='mt-4'
-                  action='/api/upload'
-                  method='POST'
-                  enctype='multipart/form-data'
-                  id='change-avatar-form'
-                > --}}
-                <form class="mt-4" id='change-avatar-form' enctype="multipart/form-data">
-                  <div class='form-group'>
-                    <input
-                      type='file'
-                      name='file'
-                      id='input-file'
-                      class='form-control-file border'
-                    />
-                  </div>
-                  <button type='button' class='btn btn-primary' id='change-avatar-button'>Replace</button>
-                </form>
-              </div>
-              {{/each}}
-
-            </div>
+            <img src='/images/avatar/{{picture}}' />
           </div>
 
           <div class='account-form-wrapper'>
