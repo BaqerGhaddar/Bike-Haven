@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { User, Bicycle, Part } = require('../../models');
+const fs = require('fs');
+const path = require('path');
+const { User, Image } = require('../../models');
 const { ValidationError } = require('sequelize');
 
 // get all users
@@ -56,6 +58,30 @@ router.post('/', async (req, res) => {
       password: req.body.password,
       name: req.body.name
     });
+
+    console.log('creating user image with id:', dbUserData.id);
+    const dbImageData = await Image.create({
+      user_id: dbUserData.id,
+      type: 'image/png',
+      name: dbUserData.username,
+      data: fs.readFileSync(
+        path.join(__dirname, '/../../public/images/user/tmp/tmp.png')
+        // __dirname + '/../../public/images/user/uploads' + req.file.filename
+      )
+    });
+
+    fs.writeFileSync(
+      path.join(
+        __dirname,
+        '/../../public/images/user/',
+        `${dbImageData.name}.png`
+      ),
+      // __dirname + '/../../public/images/user/tmp/' + image.name,
+      dbImageData.data
+    
+    );
+    console.log(avatarImage);
+
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
@@ -68,8 +94,11 @@ router.post('/', async (req, res) => {
       res.json(dbUserData);
     });
   } catch (err) {
+    console.log(err);
     if (err instanceof ValidationError) {
       res.status(500).json(err);
+    } else {
+      return res.send(`Error when trying upload images: ${err}`);
     }
   }
 });
@@ -121,16 +150,51 @@ router.put('/', async (req, res) => {
         email: 'some@email.com'
     }  */
   try {
-    const dbUserData = await User.update(req.body, {
-      individualHooks: true,
-      where: { id: req.session.user_id }
-    });
+    const dbUserData = await User.update(
+      {
+        name: req.body.name,
+        username: req.body.username,
+        password: req.body.password,
+        email: req.body.email
+      },
+      {
+        individualHooks: true,
+        where: { id: req.session.user_id },
+        raw: true,
+        nest: true
+      }
+    );
+    //rename photo
+    fs.renameSync(
+      path.join(
+        __dirname,
+        '/../../public/images/user/',
+        `${req.body.old_username}.png`
+      ),
+      path.join(
+        __dirname,
+        '/../../public/images/user/',
+        `${req.body.username}.png`
+      )
+    );
+
     !dbUserData
       ? res.status(404).json({ message: 'No user found with this id' })
       : res.json(dbUserData);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
+
+// logout user
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end(); // 204 no content, success nothing to do
+    });
+  }
+});
+
 
 module.exports = router;

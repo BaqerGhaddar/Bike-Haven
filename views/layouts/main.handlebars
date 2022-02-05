@@ -44,9 +44,9 @@
         aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
         <span class='navbar-toggler-icon'></span>
       </button>
+        <embed class="floatRight" src="https://arslan-razi.github.io/moving-bike/" style="width:200px; height: 180px; overflow: hidden; background-color : transparent;">
       <div class='collapse navbar-collapse' id='navbarNavDropdown'>
-               <embed class="floatRight" src="https://arslan-razi.github.io/moving-bike/" style="width:200px; height: 160px; overflow: hidden; background-color : transparent;">
-
+            
         <ul class='navbar-nav' role='navigation'>
           <li class='nav-item'>
             <a class='nav-link active' aria-current='page' href='/wishlist'>Wishlist</a>
@@ -64,11 +64,11 @@
             </a>
             <ul class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
               {{#if loggedIn}}
-                <li><a class='dropdown-item' href='/logout'>Logout</a></li>
+                <li><a class='dropdown-item' id="logout-option" href='/logout'>Logout</a></li>
                 <li>
-                  <button type='button' class='btn' data-bs-toggle='modal' data-bs-target='#profile-modal'>
+                  <a class='dropdown-item' href='#' data-bs-toggle='modal' data-bs-target='#profile-modal'>
                     Profile
-                  </button>
+                  </a>
                 </li>
 
               {{else}}
@@ -78,12 +78,18 @@
             </ul>
           </li>
         </ul>
+         {{#if loggedIn}}
+        <div  class='border border-dark ' id='main-display_image'>
+          <img class='' id='main-image' src='/images/user/{{current_user.username}}.png' />
+        </div>
+        {{/if}}
       </div>
     </div>
   </nav>
-
+  
   {{#if loggedIn}}
     {{>profile-modal current_user}}
+    <script src='/javascript/logout.js'></script>
   {{/if}}
 
   {{! body for the browser }}

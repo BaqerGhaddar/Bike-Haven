@@ -21,8 +21,25 @@ main {
   padding: 0 30px 0 30px;
 }
 
-.bike-card {
-  padding-bottom: 30px;
+.image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#display_image{
+  width: 30%;
+  height: 30%;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+  object-fit: scale-down;
+}
+
+#profile-image{
+  width: 100%; /* You can set the dimensions to whatever you want */
+  height: 100%;
 }
 
 .bike-img {
@@ -49,6 +66,7 @@ main {
   font-size: 20px;
   background-color: rgb(197, 228, 86);
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 .review-title:hover {
   background-color: rgb(106, 181, 216);
@@ -89,6 +107,26 @@ main {
   color: rgb(197, 228, 86);
 }
 
+.floatRight{
+  position:relative;
+  padding-top: 20px;
+  padding-right: 30px;
+}
+
+#main-display_image{
+  width: 5%;
+  height: 5%;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid black;
+  border-radius: 25%;
+}
+
+#main-image{
+  width: 100%;
+  height: 100%;
+  border-radius: 25%;
+}
 /* LOGIN-HANDLEBARS/SIGNUP-FORM */
 
 .signup-form {
@@ -112,6 +150,12 @@ main {
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+.bikes-info{
+  border-radius: 15px 15px 0 0;
+  text-decoration: none;
+}
+
 
 input {
   margin: 5px auto;
@@ -158,6 +202,8 @@ input {
 .bike-card {
   background-color: white;
   width: 100%;
+  padding-bottom: 30px;
+  margin:30px 50px 30px 50px;
 }
 
 /* FOOTER */
@@ -186,7 +232,20 @@ footer a {
 @media screen and (max-width: 980px) {
   .navbar-brand {
     font-size: 30px;
+    align-content: center;
   }
+  .floatRight{
+    padding-right: 30px;
+    }
+
+    .bike-info{
+      border-radius: 15px 15px 0 0;
+    }
+
+    .bike-card{
+      margin:30px auto;
+    }
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -196,6 +255,9 @@ footer a {
   .navbar {
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+  .floatRight{
+  padding-right: 30px;
   }
 
   .featured-header {
@@ -215,6 +277,11 @@ footer a {
   .navbar-brand {
     font-size: 20px;
   }
+
+  .floatRight{
+    display: none;
+  }
+
   .container-fluid {
     flex-direction: column;
     margin-left: 0;
