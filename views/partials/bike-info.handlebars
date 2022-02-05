@@ -1,0 +1,24 @@
+<div class='bike-card p-0 m-1'>
+  <div id='bike_id'>
+    {{#if this}}
+      <div
+        class='text-white btn-block bg-dark d-flex flex-row justify-content-between p-2'
+        id='est_title'
+      >
+        <div class='d-flex align-items-center'>
+          <span>{{brand}} <b> {{model}} </b> {{id}} </span>
+        </div>
+        <i
+          class='heart-icon fas fa-heart fa-2x wishlist-icon'
+          data-id='{{id}}'
+        ></i>
+      </div>
+
+      <img
+        src='/images/bikes/{{filename}}'
+        class='img-thumbnail img img-responsive'
+      />
+      <span class='btn btn-outline-dark btn-block'>Price: {{price}}</span>
+    {{/if}}
+  </div>
+</div>
