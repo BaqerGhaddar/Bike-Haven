@@ -20,15 +20,16 @@
             <h2 class='avatar-header'>Avatar</h2>
             <div class='image-container'>
               <div id='display_image'>
-                {{#each avatarImage}}
-                <img class="avatar-img" id='profile-image' src='/images/user/{{uploadFile.user_id}}.png' />
+                {{#if avatarImage}}
+                <img class="avatar-img" id='profile-image' src='/images/user/{{current_user}}-tmp.png' />
               </div>
               {{else}}
-              <img class="avatar-img" id='profile-image' src='/images/user/{{default.png}}' />
+              <img class="avatar-img" id='profile-image' src='/images/user/default.png/' />
+              {{/if}}
               </div>
               <button type='button' class='btn btn-primary' id='avatar-button'>Change Avator</button>
               <div class='image-form-wrapper'>
-                {{/each}}
+              
                 {{!-- <form
                   class='mt-4'
                   action='/api/upload'
@@ -48,7 +49,6 @@
                   <button type='button' class='btn btn-primary' id='change-avatar-button'>Replace</button>
                 </form>
               </div>
-              {{/each}}
 
             </div>
           </div>
