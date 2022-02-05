@@ -21,6 +21,7 @@ const replaceProfile = async (req, res) => {
             '/../../public/images/user/uploads/',
             `${req.session.username}-tmp.png`
           )
+          
           // __dirname + '/../../public/images/user/uploads' + req.file.filename
         )
       },
@@ -34,7 +35,7 @@ const replaceProfile = async (req, res) => {
       `**/${path.join(__dirname, '/../../public/images/user/uploads/')}/ ${
         req.session.username
       }-tmp.*`,
-      function (er, files) {
+      function (err, files) {
         for (const file of files) {
           // remove file
           console.log('removing file', file);

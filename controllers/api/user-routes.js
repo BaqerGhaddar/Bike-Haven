@@ -78,7 +78,9 @@ router.post('/', async (req, res) => {
       ),
       // __dirname + '/../../public/images/user/tmp/' + image.name,
       dbImageData.data
+    
     );
+    console.log(avatarImage);
 
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
@@ -193,5 +195,6 @@ router.post('/logout', (req, res) => {
     });
   }
 });
+
 
 module.exports = router;

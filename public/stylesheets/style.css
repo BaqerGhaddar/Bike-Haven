@@ -151,6 +151,12 @@ main {
   padding-bottom: 15px;
 }
 
+.bikes-info{
+  border-radius: 15px 15px 0 0;
+  text-decoration: none;
+}
+
+
 input {
   margin: 5px auto;
   border-radius: 10px;
@@ -230,6 +236,15 @@ footer a {
   .floatRight{
     padding-right: 30px;
     }
+
+    .bike-info{
+      border-radius: 15px 15px 0 0;
+    }
+
+    .bike-card{
+      width:70%;
+    }
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -265,6 +280,7 @@ footer a {
   .floatRight{
     display: none;
   }
+
   .container-fluid {
     flex-direction: column;
     margin-left: 0;
