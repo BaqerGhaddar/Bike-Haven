@@ -203,6 +203,7 @@ input {
   background-color: white;
   width: 100%;
   padding-bottom: 30px;
+  margin:30px 50px 30px 50px;
 }
 
 /* FOOTER */
@@ -242,7 +243,7 @@ footer a {
     }
 
     .bike-card{
-      width:70%;
+      margin:30px auto;
     }
     
 }

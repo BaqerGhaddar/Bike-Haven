@@ -21,14 +21,14 @@
             <div class='image-container'>
               <div id='display_image'>
                 {{#each avatarImage}}
-                <img class="avatar-img" id='profile-image' src='{{uploadFile.user_id}}.png' />
+                <img class="avatar-img" id='profile-image' src='/images/user/{{uploadFile.user_id}}.png' />
               </div>
               {{else}}
-              <img class="avatar-img" id='profile-image' src='{{default.png}}' />
+              <img class="avatar-img" id='profile-image' src='/images/user/{{default.png}}' />
               </div>
               <button type='button' class='btn btn-primary' id='avatar-button'>Change Avator</button>
               <div class='image-form-wrapper'>
-               
+                {{/each}}
                 {{!-- <form
                   class='mt-4'
                   action='/api/upload'

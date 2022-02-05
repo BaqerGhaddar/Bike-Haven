@@ -158,7 +158,6 @@ function changeAvatarFormHandler(event) {
 
 $(function () {
   $('#profile-modal').on('hidden.bs.modal', function () {
-    console.log('hidden');
     $('.image-form-wrapper').hide();
     $('#avatar-button').show();
     resetModal();
