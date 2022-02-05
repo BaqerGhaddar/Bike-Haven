@@ -72,24 +72,19 @@ main {
   background-color: white;
   font-weight: bold;
   cursor: pointer;
+  background-color: rgb(106, 181, 216);
+  box-shadow: 5px 10px 8px 10px ;
 }
 
-.title-wraper:hover{
-  background-color: rgb(197, 228, 86);
-  
-}
 
 .review-title {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
-  background-color: rgb(197, 228, 86);
   margin-bottom: 30px;
   margin-top: 30px;
 }
-.review-title:hover {
-  background-color: rgb(106, 181, 216);
-}
+
 
 /* Navbar Section */
 
