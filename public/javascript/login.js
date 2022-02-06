@@ -10,7 +10,9 @@ async function signupFormHandler(event) {
     const emailResponse = await fetch('/api/users/email', {
       method: 'POST',
       body: JSON.stringify({ email }),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' ,
+      "Accept": 'application/json'
+    }
     });
 
     if (!emailResponse.ok) {

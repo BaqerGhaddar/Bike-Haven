@@ -165,6 +165,8 @@ main {
 
 .bikes-info{
   border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: center;
   text-decoration: none;
 }
 
@@ -184,8 +186,6 @@ input {
 }
 
 .heart-icon {
-  position: relative;
-  float: right;
   padding:20px 10px 10px;
   color: gray;
 }
@@ -194,11 +194,15 @@ input {
   color: rgb(197, 228, 86);
 }
 
+.add-button{
+  box-shadow:5px 10px 8px 10px ;
+  margin:20px auto 20px;
+}
+
 .btn-block {
   text-align: center;
   width: 100%;
 }
-
 /* ICONS CONTACT SECTION */
 .icon {
   padding-right: 50px;
@@ -213,9 +217,26 @@ input {
 
 .bike-card {
   background-color: white;
-  width: 100%;
+  /* width: 70%; */
   padding-bottom: 30px;
-  margin:30px 50px 30px 50px;
+  margin:10px auto 10px;
+}
+
+.comment-form{
+  background-color: white;
+  text-align: center;
+  flex-direction: row;
+  display: block;
+  justify-content: space-around;
+ padding-left: 0;
+
+}
+
+.img-thumbnail {
+ border:none;
+
+  max-width: 100%;
+  height: auto;
 }
 
 .d-flex {
@@ -252,10 +273,6 @@ footer a {
   }
   .floatRight{
     padding-right: 30px;
-    }
-
-    .bike-info{
-      border-radius: 15px 15px 0 0;
     }
 
     .bike-card{

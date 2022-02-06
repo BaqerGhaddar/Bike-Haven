@@ -1,5 +1,5 @@
 <div class='sub-part-card'>
-
+{{#each subPardata}}
   <div class='sub-part-header-wrapper'>
     <h3 class='sub-part-header'>{{name}}</h3>
   </div>
@@ -13,7 +13,7 @@
       class='img-thumbnail img img-responsive'
     />
   </div>
-
+{{/each}}
   <div class='sub-part-wrapepr'>
     <span class='btn btn-outline-dark btn-block'>Price: {{price}} Stock: {{Stock}}</span>
   </div>
