@@ -9,7 +9,7 @@
 
     <ul class="bike-list">
         {{#each wishlist.bikes as |bikes|}}
-        {{>bike-info bikes}}
+        {{>wish-info bikes}}
         {{/each}}
     </ul>
 
@@ -22,3 +22,7 @@
         {{/each}}
     </ul>
 </section>
+
+{{#if loggedIn}}
+        <script src='/javascript/delete-item.js'></script>
+    {{/if}}
