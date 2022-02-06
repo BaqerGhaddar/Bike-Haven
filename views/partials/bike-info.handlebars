@@ -2,7 +2,7 @@
   <div id='bike_id'>
     {{#if this}}
       <div
-        class='bikes-info  text-white btn-block bg-dark d-flex flex-row p-2 '
+        class='bikes-info  text-white btn-block bg-dark d-flex flex-row p-2 text-decoration-none'
         class='text-white btn-block bg-dark d-flex flex-row justify-content-between p-2'
         id='est_title'
       >
@@ -19,8 +19,8 @@
         src='/images/bikes/{{filename}}'
         class='img-thumbnail img img-responsive'
       />
-      <p>{{description}}</p>
-      <span class='btn btn-outline-dark btn-block'>Price: {{price}}</span>
+      <p class=" bike-description text-decoration-none">{{description}}</p>
+      <span class='btn btn-outline-dark bg-light btn-block'>Price: {{price}}</span>
 
     {{/if}}
   </div>

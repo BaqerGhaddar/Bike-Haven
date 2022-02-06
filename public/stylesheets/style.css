@@ -114,6 +114,12 @@ main {
   text-decoration: none;
 }
 
+.part-card{
+  width: 80%;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
 
 input {
   margin: 5px auto;
@@ -141,6 +147,7 @@ input {
 .add-button{
   box-shadow:5px 10px 8px 10px ;
   margin:20px auto 20px;
+  background-color: white;
 }
 
 .btn-block {
@@ -160,21 +167,21 @@ input {
 /* BIKE CARD INFO HANDLEBARS */
 
 .bike-card {
-  background-color: white;
   /* width: 70%; */
   padding-bottom: 30px;
   margin:10px auto 10px;
 }
 
 .comment-form{
-  background-color: white;
+  background-color: none;
   text-align: center;
   flex-direction: row;
   display: block;
   justify-content: space-around;
  padding-left: 0;
-
 }
+
+
 
 .img-thumbnail {
  border:none;
@@ -190,6 +197,13 @@ input {
   color: white;
 }
 
+.bike-description{
+  margin-top: 0;
+  margin-bottom: 1rem;
+  background-color: black;
+  color: white;
+  text-decoration: unset;
+}
 .parts:hover .img-thumbnail {
   opacity: 0.5;
 }
@@ -242,6 +256,11 @@ footer a {
     .bike-card{
       margin:30px auto;
     }
+
+    .img-container{
+      background-color: white;
+     margin:20px auto 20px;
+    }
     
 }
 
@@ -293,4 +312,5 @@ footer a {
   .icon {
     padding-right: 20px;
   }
+
 }
