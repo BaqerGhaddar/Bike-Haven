@@ -21,31 +21,8 @@ main {
   padding: 0 30px 0 30px;
 }
 
-.image-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#display_image{
-  width: 30%;
-  height: 30%;
-  border: 1px solid black;
-  background-position: center;
-  background-size: cover;
-  object-fit: scale-down;
-}
-
-#profile-image{
-  width: 100%; /* You can set the dimensions to whatever you want */
-  height: 100%;
-}
-
-.bike-img {
-  width: 80%; /* You can set the dimensions to whatever you want */
-  height: auto;
-  object-fit: contain;
+.bike-card {
+  padding-bottom: 30px;
 }
 
 .featured-header {
@@ -60,31 +37,16 @@ main {
   background-color: rgb(106, 181, 216);
 }
 
-.wishlist-section{
- width:50%;
- margin:50px auto 20px;
-}
-
-.title-wrapper{
-  border:solid black 2px;
-  border-radius: 15px 15px;
-  margin:50px auto;
-  background-color: white;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: rgb(106, 181, 216);
-  box-shadow: 5px 10px 8px 10px ;
-}
-
-
 .review-title {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
+  background-color: rgb(197, 228, 86);
   margin-bottom: 30px;
-  margin-top: 30px;
 }
-
+.review-title:hover {
+  background-color: rgb(106, 181, 216);
+}
 
 /* Navbar Section */
 
@@ -104,7 +66,9 @@ main {
   font-weight: bold;
 }
 
-
+.navbar {
+  padding: 30px 0 30px 30px;
+}
 .navbar-brand {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
@@ -119,26 +83,6 @@ main {
   color: rgb(197, 228, 86);
 }
 
-.floatRight{
-  position:relative;
-  padding-top: 20px;
-  padding-right: 30px;
-}
-
-#main-display_image{
-  width: 5%;
-  height: 5%;
-  background-position: center;
-  background-size: cover;
-  border: 1px solid black;
-  border-radius: 25%;
-}
-
-#main-image{
-  width: 100%;
-  height: 100%;
-  border-radius: 25%;
-}
 /* LOGIN-HANDLEBARS/SIGNUP-FORM */
 
 .signup-form {
@@ -239,10 +183,31 @@ input {
   height: auto;
 }
 
-.d-flex {
-  display: flex!important;
-  padding: 30px 50px 30px 50px;
+.img-container {
+  position: relative;
+  text-align: center;
+  background-color: black;
+  color: white;
 }
+
+.parts:hover .img-thumbnail {
+  opacity: 0.5;
+}
+
+.hide {
+  display: none;
+}
+.parts:hover .text {
+  display: block;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* FOOTER */
 footer {
   display: block;
@@ -261,15 +226,14 @@ footer a {
 }
 
 /* ICON FOOTER */
-.icon-terminal {
-  color: rgb(96, 235, 124);
+.icon-laptop {
+  color: rgb(106, 181, 216);
   padding-left: 10px;
 }
 
 @media screen and (max-width: 980px) {
   .navbar-brand {
     font-size: 30px;
-    align-content: center;
   }
   .floatRight{
     padding-right: 30px;
@@ -289,9 +253,6 @@ footer a {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  .floatRight{
-  padding-right: 30px;
-  }
 
   .featured-header {
     font-size: 20px;
@@ -310,11 +271,6 @@ footer a {
   .navbar-brand {
     font-size: 20px;
   }
-
-  .floatRight{
-    display: none;
-  }
-
   .container-fluid {
     flex-direction: column;
     margin-left: 0;

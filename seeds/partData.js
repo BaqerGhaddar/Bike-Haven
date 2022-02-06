@@ -3,23 +3,23 @@ const { Part } = require('../models');
 const partData = [
   {
     type: 'Bike Frame',
-    filename: 'kona-jake-the-snake.jpg'
+    filename: 'bike_frame_stock.jpg'
   },
   {
     type: 'Wheels',
-    filename: 'kona-jake-the-snake.jpg'
+    filename: 'bike_wheels_stock.jpg'
   },
   {
     type: 'Pedals',
-    filename: 'kona-jake-the-snake.jpg'
+    filename: 'bike_pedals_stock.jpg'
   },
   {
     type: 'Bike Saddle',
-    filename: 'kona-jake-the-snake.jpg'
+    filename: 'bike_saddle_stock.jpg'
   },
   {
     type: 'Handlebars',
-    filename: 'kona-jake-the-snake.jpg'
+    filename: 'bike_handlebars_stock.jpg'
   }
 ];
 
