@@ -1,243 +1,259 @@
 * {
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* general body set */
 
-body{
-    font-family: 'Montserrat', sans-serif!important;
-    background-image: url("../images/bike-race.jpg");
-    background-size: cover;        background-position:center;
-    background-attachment: fixed;
-    background-position: 80%;
-    font-weight: bold;
-    margin:0 auto 100px auto;
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  background-image: url('../images/bike-race.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-position: 80%;
+  font-weight: bold;
+  margin: 0 auto 100px auto;
 }
 
-main{
-    padding:0 30px 0 30px;
+main {
+  padding: 0 30px 0 30px;
 }
 
-.bike-card{
-    padding-bottom: 30px;
+.bike-card {
+  padding-bottom: 30px;
 }
 
-.featured-header{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    background-color: rgb(197, 228, 86);
+.featured-header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgb(197, 228, 86);
 }
-.featured-header:hover{
-    background-color:rgb(106, 181, 216);
-}
-
-.review-title{
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    background-color: rgb(197, 228, 86);
-    margin-bottom: 30px;
-}
-.review-title:hover{
-background-color:rgb(106, 181, 216);
+.featured-header:hover {
+  background-color: rgb(106, 181, 216);
 }
 
+.review-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgb(197, 228, 86);
+  margin-bottom: 30px;
+}
+.review-title:hover {
+  background-color: rgb(106, 181, 216);
+}
 
 /* Navbar Section */
 
-.navbar{
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(229,244,224,1) 0%, rgba(108,217,38,1) 24%, rgba(34,162,154,1) 65%, rgba(8,92,206,1) 100%, rgba(0,212,255,1) 100%);
+.navbar {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(229, 244, 224, 1) 0%,
+    rgba(108, 217, 38, 1) 24%,
+    rgba(34, 162, 154, 1) 65%,
+    rgba(8, 92, 206, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
-.nav{
-font-weight: bold;
+.nav {
+  font-weight: bold;
 }
 
-.navbar{
-    padding:30px 0 30px 30px;
+.navbar {
+  padding: 30px 0 30px 30px;
 }
 .navbar-brand {
-    padding-top: 0.3125rem;
-    padding-bottom: 0.3125rem;
-    margin-right: 1rem;
-    font-size: 40px;
-    text-decoration: none;
-    white-space: nowrap;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 40px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .navbar-toggler:hover {
-    text-decoration: none;
-    color: rgb(197, 228, 86);
+  text-decoration: none;
+  color: rgb(197, 228, 86);
 }
-
 
 /* LOGIN-HANDLEBARS/SIGNUP-FORM */
 
-.signup-form{
-    background-color: white;
-    width:300px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: rgb(106, 181, 216) 5px 5px ;
-    margin: 50px auto;
-    padding-top:15px;
-    padding-bottom: 15px;
+.signup-form {
+  background-color: white;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: rgb(106, 181, 216) 5px 5px;
+  margin: 50px auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.login-form{
-    background-color: white;
-    width:300px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: rgb(106, 181, 216) 5px 5px ;
-    margin: 50px auto;
-    padding-top:15px;
-    padding-bottom: 15px;
+.login-form {
+  background-color: white;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: rgb(106, 181, 216) 5px 5px;
+  margin: 50px auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-
-input{
-    margin:5px auto;
-    border-radius: 10px;
-    border:rgb(78, 75, 75) 1px solid;
-    display:block;
-    width:80%;
-    height: 40px;
+input {
+  margin: 5px auto;
+  border-radius: 10px;
+  border: rgb(78, 75, 75) 1px solid;
+  display: block;
+  width: 80%;
+  height: 40px;
 }
 
-.submit{
-    font-weight: bold;
-    margin-top: 10px;
+.submit {
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-.heart-icon{
-    position: relative;
-    float: right;
-    padding:10px 10px 10px 10px;
-    color:gray;
+.heart-icon {
+  position: relative;
+  float: right;
+  padding: 10px 10px 10px 10px;
+  color: gray;
 }
 
-.heart-icon:hover{
-    color: rgb(197, 228, 86);
+.heart-icon:hover {
+  color: rgb(197, 228, 86);
 }
 
-.btn-block{
-    text-align: center;
-    width:100%;
+.btn-block {
+  text-align: center;
+  width: 100%;
 }
-
-
 
 /* ICONS CONTACT SECTION */
-.icon{
-    padding-right: 50px;
-    color: rgb(197, 228, 86);
+.icon {
+  padding-right: 50px;
+  color: rgb(197, 228, 86);
 }
 
-.icon:hover{
-   color: rgb(106, 181, 216);
+.icon:hover {
+  color: rgb(106, 181, 216);
 }
-
 
 /* BIKE CARD INFO HANDLEBARS */
 
-.bike-card{
-    background-color: white;
-    width:100%;
+.bike-card {
+  background-color: white;
+  width: 100%;
+}
+
+.img-container {
+  position: relative;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.parts:hover .img-thumbnail {
+  opacity: 0.5;
+}
+
+.hide {
+  display: none;
+}
+.parts:hover .text {
+  display: block;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* FOOTER */
-footer{
-    display:block;
-    justify-content: flex-end;
-    position: fixed;
-    bottom:0;
-    width: 100%;
-    background-color: white!important;
-    font-weight: bold;
-    position: fixed;
-    padding:10px auto 10px;
+footer {
+  display: block;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white !important;
+  font-weight: bold;
+  position: fixed;
+  padding: 10px auto 10px;
 }
 
-
-footer a{
-    justify-content: space-evenly;
+footer a {
+  justify-content: space-evenly;
 }
 
 /* ICON FOOTER */
-.icon-laptop{
-    color: rgb(106, 181, 216);
-    padding-left: 10px;
+.icon-laptop {
+  color: rgb(106, 181, 216);
+  padding-left: 10px;
 }
 
-@media screen and (max-width:980px){
-    .navbar-brand{
-        font-size: 30px;
-    }
-    
+@media screen and (max-width: 980px) {
+  .navbar-brand {
+    font-size: 30px;
+  }
 }
 
-@media screen and (max-width:768px){
-    .navbar-brand{
-        font-size: 30px;
-    }
-    .navbar{
-        padding-top:20px;
-        padding-bottom: 20px;
-    }
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    font-size: 30px;
+  }
+  .navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 
-.featured-header{
+  .featured-header {
     font-size: 20px;
-}
+  }
 
-.review-title{
+  .review-title {
     font-size: 20px;
+  }
+
+  footer {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
+@media screen and (max-width: 575px) {
+  .navbar-brand {
+    font-size: 20px;
+  }
+  .container-fluid {
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .navbar-collapse {
+    font-size: 14px;
+  }
 
-    footer{
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-    
+  .bike-card {
+    font-size: 16px;
+  }
+
+  .heart-icon {
+    font-size: 20px;
+  }
+  .text-center {
+    font-size: small;
+    font-size: 12px;
+  }
+  .icon {
+    padding-right: 20px;
+  }
 }
-@media screen and (max-width:575px){
-    .navbar-brand{
-        font-size: 20px;
-    }
-    .container-fluid{
-        flex-direction: column;
-        margin-left: 0;
-    }
-    .navbar-collapse{
-        font-size: 14px;
-    }
-
-    .bike-card{
-        font-size: 16px;
-    }
-
-    .heart-icon{
-        font-size: 20px;
-    }
-    .text-center{
-        font-size: small;
-        font-size: 12px;
-    }
-    .icon{
-        padding-right: 20px;
-    }
-  
-    
-}
-
-
-
-
-
-
-

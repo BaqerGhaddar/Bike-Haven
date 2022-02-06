@@ -2,34 +2,24 @@ const { Part } = require('../models');
 
 const partData = [
   {
-    type: 'Bike Rack',
-    stock: 57,
-    price: 129.0,
-    filename: 'kona-jake-the-snake.jpg'
+    type: 'Bike Frame',
+    filename: 'bike_frame_stock.jpg'
   },
   {
-    type: 'Adjustable Kickstand',
-    stock: 42,
-    price: 44.0,
-    filename: 'kona-jake-the-snake.jpg'
+    type: 'Wheels',
+    filename: 'bike_wheels_stock.jpg'
   },
   {
-    type: 'Flat Pedals',
-    stock: 158,
-    price: 129.0,
-    filename: 'kona-jake-the-snake.jpg'
+    type: 'Pedals',
+    filename: 'bike_pedals_stock.jpg'
   },
   {
-    type: 'LED Handlebar Headlight',
-    stock: 110,
-    price: 61.0,
-    filename: 'kona-jake-the-snake.jpg'
+    type: 'Bike Saddle',
+    filename: 'bike_saddle_stock.jpg'
   },
   {
-    type: 'Hand Pump',
-    stock: 26,
-    price: 57.0,
-    filename: 'kona-jake-the-snake.jpg'
+    type: 'Handlebars',
+    filename: 'bike_handlebars_stock.jpg'
   }
 ];
 

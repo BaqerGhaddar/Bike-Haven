@@ -1,13 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const getUser = require('../utils/getUser');
-const {
-  Bicycle,
-  Bicycle_Comment,
-  User,
-  Part,
-  Part_Comment
-} = require('../models');
+const { Bicycle, Bicycle_Comment, User, Part, SubPart } = require('../models');
 const { resizeArray } = require('../utils/arrays');
 
 // middleware auth function
@@ -91,6 +85,53 @@ router.get('/bikes/:id', async (req, res) => {
     console.log(bike);
     res.render('single-bike', {
       bike,
+      loggedIn: req.session.loggedIn,
+      current_user: req.current_user
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/parts', async (req, res) => {
+  try {
+    const dbPartData = await Part.findAll({ raw: true, nest: true });
+    if (!dbPartData) return;
+    const partData = resizeArray(dbPartData, 3);
+    console.log(partData);
+    res.render('customize', {
+      partData,
+      loggedIn: req.session.loggedIn,
+      current_user: req.current_user
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/parts/:id', async (req, res) => {
+  try {
+    const part = await Part.findOne({
+      where: { id: req.params.id },
+      attributes: ['type'],
+      include: [
+        {
+          model: SubPart,
+          attributes: ['name', 'price', 'quality_type', 'filename']
+        }
+      ],
+      raw: true,
+      nest: true
+    });
+    if (!part) {
+      res.status(404).json({ message: 'No bike found with this id' });
+      return;
+    }
+    console.log(part);
+    res.render('single-part', {
+      part,
       loggedIn: req.session.loggedIn,
       current_user: req.current_user
     });
