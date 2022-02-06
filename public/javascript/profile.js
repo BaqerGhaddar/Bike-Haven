@@ -1,15 +1,18 @@
 const myModalEl = document.querySelector('#profile-modal');
 
-
 function previewFile() {
   const preview = document.querySelector('img');
   const file = document.querySelector('input[type=file]').files[0];
   const reader = new FileReader();
 
-  reader.addEventListener("load", function () {
-    // convert image file to base64 string
-    preview.src = reader.result;
-  }, false);
+  reader.addEventListener(
+    'load',
+    function () {
+      // convert image file to base64 string
+      preview.src = reader.result;
+    },
+    false
+  );
 
   if (file) {
     reader.readAsDataURL(file);
@@ -164,6 +167,10 @@ function changeAvatarFormHandler(event) {
     contentType: false,
     processData: false,
     method: 'POST',
+    error: function (request, error) {
+      console.log(arguments);
+      alert(" Can't do because: " + error);
+    },
     success: function (msg) {
       if (!alert(msg)) {
         window.location.reload();
