@@ -1,0 +1,16 @@
+<article class='part-section'>
+  <div id='container'>
+    {{#each this as |part_row|}}
+      <div class='row'>
+        {{#each part_row as |part|}}
+          <div class='col-lg-4 col-md-6 col-sm-12'>
+            <a class="parts" href='/parts/{{part.id}}'> 
+
+              {{>part-info part}}
+            </a>
+          </div>
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+</article>

@@ -1,7 +1,5 @@
 const router = require('express').Router();
-const fs = require('fs');
-const path = require('path');
-const { User, Image } = require('../../models');
+const { User, Bicycle, Part } = require('../../models');
 const { ValidationError } = require('sequelize');
 
 // get all users
@@ -78,7 +76,6 @@ router.post('/', async (req, res) => {
       ),
       // __dirname + '/../../public/images/user/tmp/' + image.name,
       dbImageData.data
-    
     );
     console.log(avatarImage);
 
@@ -97,8 +94,6 @@ router.post('/', async (req, res) => {
     console.log(err);
     if (err instanceof ValidationError) {
       res.status(500).json(err);
-    } else {
-      return res.send(`Error when trying upload images: ${err}`);
     }
   }
 });
@@ -195,6 +190,5 @@ router.post('/logout', (req, res) => {
     });
   }
 });
-
 
 module.exports = router;

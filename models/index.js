@@ -13,7 +13,6 @@ Part.hasMany(SubPart, {
 SubPart.belongsTo(Part, {
   foreignKey: 'part_id'
 });
-
 module.exports = {
   User,
   Bicycle,

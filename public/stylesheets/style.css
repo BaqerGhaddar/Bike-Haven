@@ -21,6 +21,7 @@ main {
   padding: 0 30px 0 30px;
 }
 
+<<<<<<< HEAD
 .image-container{
   display: flex;
   justify-content: center;
@@ -83,8 +84,34 @@ main {
   font-size: 20px;
   margin-bottom: 30px;
   margin-top: 30px;
+=======
+.bike-card {
+  padding-bottom: 30px;
 }
 
+.featured-header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgb(197, 228, 86);
+}
+.featured-header:hover {
+  background-color: rgb(106, 181, 216);
+}
+
+.review-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgb(197, 228, 86);
+  margin-bottom: 30px;
+}
+.review-title:hover {
+  background-color: rgb(106, 181, 216);
+>>>>>>> feature/working-branch
+}
 
 /* Navbar Section */
 
@@ -104,7 +131,13 @@ main {
   font-weight: bold;
 }
 
+<<<<<<< HEAD
 
+=======
+.navbar {
+  padding: 30px 0 30px 30px;
+}
+>>>>>>> feature/working-branch
 .navbar-brand {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
@@ -119,6 +152,7 @@ main {
   color: rgb(197, 228, 86);
 }
 
+<<<<<<< HEAD
 .floatRight{
   position:relative;
   padding-top: 20px;
@@ -138,9 +172,34 @@ main {
   width: 100%;
   height: 100%;
   border-radius: 25%;
+=======
+/* LOGIN-HANDLEBARS/SIGNUP-FORM */
+
+.signup-form {
+  background-color: white;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: rgb(106, 181, 216) 5px 5px;
+  margin: 50px auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.login-form {
+  background-color: white;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: rgb(106, 181, 216) 5px 5px;
+  margin: 50px auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+>>>>>>> feature/working-branch
 }
 /* LOGIN-HANDLEBARS/SIGNUP-FORM */
 
+<<<<<<< HEAD
 .signup-form {
   background-color: white;
   width: 300px;
@@ -199,6 +258,38 @@ input {
   width: 100%;
 }
 
+=======
+input {
+  margin: 5px auto;
+  border-radius: 10px;
+  border: rgb(78, 75, 75) 1px solid;
+  display: block;
+  width: 80%;
+  height: 40px;
+}
+
+.submit {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.heart-icon {
+  position: relative;
+  float: right;
+  padding: 10px 10px 10px 10px;
+  color: gray;
+}
+
+.heart-icon:hover {
+  color: rgb(197, 228, 86);
+}
+
+.btn-block {
+  text-align: center;
+  width: 100%;
+}
+
+>>>>>>> feature/working-branch
 /* ICONS CONTACT SECTION */
 .icon {
   padding-right: 50px;
@@ -214,6 +305,7 @@ input {
 .bike-card {
   background-color: white;
   width: 100%;
+<<<<<<< HEAD
   padding-bottom: 30px;
   margin:30px 50px 30px 50px;
 }
@@ -298,6 +390,90 @@ footer a {
     display: none;
   }
 
+=======
+}
+
+.img-container {
+  position: relative;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.parts:hover .img-thumbnail {
+  opacity: 0.5;
+}
+
+.hide {
+  display: none;
+}
+.parts:hover .text {
+  display: block;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* FOOTER */
+footer {
+  display: block;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white !important;
+  font-weight: bold;
+  position: fixed;
+  padding: 10px auto 10px;
+}
+
+footer a {
+  justify-content: space-evenly;
+}
+
+/* ICON FOOTER */
+.icon-laptop {
+  color: rgb(106, 181, 216);
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 980px) {
+  .navbar-brand {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    font-size: 30px;
+  }
+  .navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .featured-header {
+    font-size: 20px;
+  }
+
+  .review-title {
+    font-size: 20px;
+  }
+
+  footer {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  .navbar-brand {
+    font-size: 20px;
+  }
+>>>>>>> feature/working-branch
   .container-fluid {
     flex-direction: column;
     margin-left: 0;
@@ -320,4 +496,8 @@ footer a {
   .icon {
     padding-right: 20px;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> feature/working-branch

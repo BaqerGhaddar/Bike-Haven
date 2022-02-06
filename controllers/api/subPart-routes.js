@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Part, SubPart } = require('../../models');
+const { SubPart } = require('../../models');
 
 // get all parts with associated comments
 router.get('/', (req, res) => {
-  Part.findAll({
-    attributes: ['id', 'type']
+  SubPart.findAll({
+    attributes: ['id', 'name', 'price', 'quality_type']
   })
-    .then((dbPostData) => res.json(dbPostData))
+    .then((dbSubPartData) => res.json(dbSubPartData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -15,24 +15,18 @@ router.get('/', (req, res) => {
 
 // get all parts by id with associated comments
 router.get('/:id', (req, res) => {
-  Part.findOne({
+  SubPart.findOne({
     where: {
       id: req.params.id
     },
-    attributes: ['type'],
-    include: [
-      {
-        model: SubPart,
-        attributes: ['name', 'price', 'quality_type', 'filename']
-      }
-    ]
+    attributes: ['id', 'name', 'price', 'quality_type']
   })
-    .then((dbPartData) => {
-      if (!dbPartData) {
+    .then((dbSubPartData) => {
+      if (!dbSubPartData) {
         res.status(404).json({ message: 'No Part found with this id' });
         return;
       }
-      res.json(dbPartData);
+      res.json(dbSubPartData);
     })
     .catch((err) => {
       console.log(err);
