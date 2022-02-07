@@ -4,9 +4,11 @@
   "description": "An Online Bike Store 🚲",
   "main": "server.js",
   "scripts": {
+    "seed": "node seeds/index.js",
+    "build": "node seeds/index.js",
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node seeds/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "repository": {
     "type": "git",
