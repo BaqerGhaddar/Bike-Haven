@@ -146,15 +146,10 @@ router.get('/wishlist', async (req, res) => {
   });
 });
 
-router.get('/customize', async (req, res) => {
-  res.render('customize', {
-    loggedIn: req.session.loggedIn,
-    current_user: req.current_user
-  });
-});
 
-router.get('/home', (req, res) => {
-  res.render('home');
-});
+
+// router.get('/home', (req, res) => {
+//   res.render('home');
+// });
 
 module.exports = router;
