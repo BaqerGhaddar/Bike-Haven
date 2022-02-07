@@ -58,6 +58,49 @@ A folder structure that meets the MVC paradigm
 Web app already deployed ready for you to use. 
 [Bike Haven Website URL](https://bike-haven.herokuapp.com/)
 
+This is for local install if you want to deploy the appliaction yourself
+
+1. clone repo on github
+2. Install any required dependancies
+
+```
+    npm install
+```
+
+3. Enter your SQL database crendentials in .env file (see .env.Example)
+
+```
+    DB_NAME=tech_blog_db
+    DB_USER=<database user>
+    DB_PW=<database password>
+    SESSION_SECRET=<session password>
+```
+
+4. Login to SQL on command line
+
+```
+    mysql -u <user> -p
+```
+
+5. Create database by running the schema
+
+```
+    source db/schema.sql
+    quit
+```
+
+6. (Optional) Seed values for db
+
+```
+    npm run seed
+```
+
+6. Start the application on nodeJS
+
+```
+    npm start
+```
+
 ## Contributers 
 
 1. Fabiola C. Gamboa 
