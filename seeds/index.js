@@ -1,7 +1,7 @@
 const seedBikes = require('./bikeData');
 const seedParts = require('./partData');
 const seedUser = require('./userData');
-const seedSubParts = require('./subPartData');
+const seedSubParts = require('./SubPartData');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
