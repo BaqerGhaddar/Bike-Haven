@@ -180,6 +180,7 @@ input {
   color: rgb(197, 228, 86);
 }
 
+.bike-description
 .add-button{
   box-shadow:5px 10px 8px 10px ;
   margin:20px auto 20px;
@@ -233,12 +234,18 @@ input {
   color: white;
 }
 
+.bike-card-link{
+  text-decoration: none;
+
+}
+
 .bike-description{
   margin-top: 0;
   margin-bottom: 1rem;
   background-color: black;
   color: white;
-  text-decoration: unset;
+    text-align: start;
+    padding: 20px 30px;
 }
 .parts:hover .img-thumbnail {
   opacity: 0.5;
