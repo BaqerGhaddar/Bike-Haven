@@ -1,9 +1,10 @@
 <section class="customize-section">
 
-    {{#each wishlist.parts as |part|}}
+    {{!-- {{#each wishlist.parts as |part|}}
         {{>part part}}
     {{/each}}
-    {{>bike-info bike }}
+    {{>bike-info bike }} --}}
+    {{> parts partData}}
 
     {{#if loggedIn}}
         <form class="comment-form">
@@ -19,4 +20,3 @@
     
     {{!-add items}}
 </section>
-{{> parts partData}}

@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { User, Bicycle, Part } = require('../../models');
+const fs = require('fs');
+const path = require('path');
+const { User, Image } = require('../../models');
 const { ValidationError } = require('sequelize');
 
 // get all users
@@ -77,7 +79,6 @@ router.post('/', async (req, res) => {
       // __dirname + '/../../public/images/user/tmp/' + image.name,
       dbImageData.data
     );
-    console.log(avatarImage);
 
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
